@@ -11,18 +11,18 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --bg-deep: #060a14;
-  --bg-primary: #0a0e1a;
-  --bg-card: rgba(255,255,255,0.03);
-  --bg-card-hover: rgba(255,255,255,0.06);
+  --bg-deep: #0b1120;
+  --bg-primary: #0b1120;
+  --bg-card: transparent;
+  --bg-card-hover: rgba(255,255,255,0.03);
   --accent: #00c9a7;
   --accent-glow: rgba(0,201,167,0.15);
   --accent-soft: #00e6be;
   --gold: #c4a862;
   --text-primary: #f0f0f0;
-  --text-secondary: #8a8fa8;
-  --text-muted: #555b75;
-  --border: rgba(255,255,255,0.06);
+  --text-secondary: #c8cdd8;
+  --text-muted: #8a90a5;
+  --border: rgba(255,255,255,0.08);
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Outfit', sans-serif;
 }
@@ -37,15 +37,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ===== GRAIN OVERLAY ===== */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 9999;
-}
+/* ===== CLEAN BACKGROUND ===== */
 
 /* ===== NAVIGATION ===== */
 nav {
@@ -61,12 +53,12 @@ nav {
   justify-content: space-between;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  background: rgba(6,10,20,0.7);
+  background: rgba(11,17,32,0.7);
   border-bottom: 1px solid var(--border);
   transition: all 0.4s ease;
 }
 
-nav.scrolled { background: rgba(6,10,20,0.92); }
+nav.scrolled { background: rgba(11,17,32,0.95); }
 
 .nav-logo {
   display: flex;
@@ -294,7 +286,7 @@ nav.scrolled { background: rgba(6,10,20,0.92); }
   text-decoration: none;
 }
 
-.btn-secondary:hover { border-color: var(--text-secondary); background: rgba(255,255,255,0.03); }
+.btn-secondary:hover { border-color: var(--text-secondary); background: rgba(255,255,255,0.05); }
 
 .hero-scroll {
   position: absolute;
@@ -405,8 +397,8 @@ section { padding: 120px 48px; position: relative; }
   margin-top: 40px;
   padding: 28px 32px;
   border-radius: 12px;
-  background: rgba(0,201,167,0.04);
-  border: 1px solid rgba(0,201,167,0.1);
+  background: transparent;
+  border: 1px solid rgba(0,201,167,0.12);
   position: relative;
 }
 
@@ -493,7 +485,7 @@ section { padding: 120px 48px; position: relative; }
   padding: 40px;
   border: 1px solid var(--border);
   border-radius: 20px;
-  background: var(--bg-card);
+  background: transparent;
 }
 
 .solution-desc-block p {
@@ -627,7 +619,7 @@ section { padding: 120px 48px; position: relative; }
   text-align: center;
   padding: 32px;
   border-radius: 16px;
-  background: linear-gradient(135deg, rgba(0,201,167,0.06), rgba(196,168,98,0.06));
+  background: transparent;
   border: 1px solid rgba(0,201,167,0.12);
 }
 
@@ -778,7 +770,7 @@ section { padding: 120px 48px; position: relative; }
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: var(--bg-primary);
+  background: var(--bg-deep);
   border: 2px solid var(--accent);
   z-index: 1;
 }
@@ -871,7 +863,7 @@ section { padding: 120px 48px; position: relative; }
   align-items: center;
   gap: 12px;
   padding: 18px 40px;
-  background: var(--bg-card);
+  background: transparent;
   border: 1px solid var(--border);
   border-radius: 12px;
   font-size: 18px;
@@ -950,32 +942,74 @@ footer p {
 }
 
 @media (max-width: 768px) {
-  nav { padding: 0 24px; }
+  nav { padding: 0 20px; height: 64px; }
   .nav-links { display: none; }
   .menu-toggle { display: block; }
   .nav-links.open {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 72px;
+    top: 64px;
     left: 0;
     right: 0;
-    background: rgba(6,10,20,0.97);
-    padding: 32px 24px;
+    background: rgba(11,17,32,0.97);
+    padding: 24px 20px;
     gap: 20px;
     border-bottom: 1px solid var(--border);
     backdrop-filter: blur(20px);
   }
-  section { padding: 64px 20px; }
-  .hero { padding: 100px 20px 60px; }
-  .hero-actions { flex-direction: column; align-items: center; }
-  .gap-cards { grid-template-columns: 1fr; }
-  .benefits-grid { grid-template-columns: 1fr; }
-  .market-grid { grid-template-columns: 1fr; }
-  .market-row-2 { grid-template-columns: 1fr; }
-  .team-stats { flex-direction: column; gap: 32px; }
-  .contact { padding: 80px 20px; }
-  footer { flex-direction: column; gap: 16px; text-align: center; }
+  section { padding: 56px 20px; }
+  .hero { padding: 100px 20px 60px; min-height: auto; min-height: 100svh; }
+  .hero h1 { font-size: 32px; letter-spacing: -0.5px; line-height: 1.15; }
+  .hero-sub { font-size: 16px; margin-bottom: 32px; }
+  .hero-badge { font-size: 10px; padding: 6px 14px; margin-bottom: 28px; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .btn-primary, .btn-secondary { text-align: center; padding: 14px 24px; font-size: 13px; }
+  .hero-scroll { display: none; }
+  .section-title { font-size: 28px; letter-spacing: -0.5px; }
+  .section-desc { font-size: 16px; }
+  .section-label { font-size: 11px; letter-spacing: 2px; }
+  .problem-grid { gap: 36px; }
+  .stat-item { padding: 20px 24px; }
+  .stat-number { font-size: 32px; }
+  .stat-label { font-size: 14px; }
+  .problem-quote { padding: 20px; }
+  .problem-quote p { font-size: 15px; }
+  .gap-cards { grid-template-columns: 1fr; max-width: 100%; }
+  .gap-card { padding: 28px 24px; }
+  .solution-desc-block { padding: 28px 20px; margin-bottom: 48px; }
+  .solution-desc-block p { font-size: 16px; }
+  .benefits-grid { grid-template-columns: 1fr; gap: 16px; }
+  .benefit-card { padding: 28px 24px; display: flex; flex-direction: column; align-items: center; }
+  .benefit-icon { font-size: 28px; margin-bottom: 12px; }
+  .benefit-card h4 { font-size: 18px; }
+  .market-grid { grid-template-columns: 1fr; gap: 16px; }
+  .market-row-2 { grid-template-columns: 1fr; gap: 16px; }
+  .market-card { padding: 32px 24px; }
+  .market-card .number { font-size: 36px; }
+  .why-grid { gap: 16px; }
+  .why-card { padding: 28px 24px; }
+  .why-card h4 { font-size: 18px; }
+  .why-card p { font-size: 14px; }
+  .why-card-number { font-size: 36px; top: 16px; right: 20px; }
+  .team-stats { flex-direction: column; gap: 24px; }
+  .team-stat .number { font-size: 36px; }
+  .expertise-tags { gap: 8px; }
+  .expertise-tag { padding: 8px 16px; font-size: 13px; }
+  .timeline { padding-left: 0; }
+  .timeline::before { left: 16px; }
+  .timeline-item { padding-left: 52px; padding-bottom: 40px; }
+  .timeline-dot { left: 6px; width: 22px; height: 22px; }
+  .timeline-title { font-size: 18px; }
+  .timeline-desc { font-size: 14px; }
+  .contact { padding: 64px 20px; }
+  .contact h2 { font-size: 28px; }
+  .contact-sub { font-size: 16px; margin-bottom: 32px; }
+  .contact-email { font-size: 15px; padding: 14px 24px; }
+  .contact-logo svg { height: 44px; }
+  footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px 20px; }
+  .container { max-width: 100%; }
+  .patent-badge .number { font-size: 48px; }
 }
 </style>
 </head>
@@ -986,7 +1020,7 @@ footer p {
   <a href="#" class="nav-logo">
     <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
       <circle cx="20" cy="18" r="16" fill="white"/>
-      <circle cx="14" cy="16" r="10" fill="#060a14"/>
+      <circle cx="14" cy="16" r="10" fill="#0b1120"/>
     </svg>
     <span>Opcure</span>
   </a>
@@ -1291,7 +1325,7 @@ footer p {
     <div class="contact-logo reveal">
       <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
         <circle cx="25" cy="22" r="20" fill="white"/>
-        <circle cx="17" cy="20" r="12.5" fill="#060a14"/>
+        <circle cx="17" cy="20" r="12.5" fill="#0b1120"/>
       </svg>
     </div>
     <h2 class="reveal reveal-delay-1">Let's Shape the Future<br>of <em>Eye Care</em> Together</h2>
