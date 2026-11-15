@@ -1,1744 +1,866 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Opcure — A Patented Topical Eye Drop to Treat Cataracts Without Surgery</title>
-<meta name="description" content="Opcure is a first-in-class zinc-replacement cataract therapy: a patented topical eye drop advancing toward a pivotal Phase III RCT and a global licensing partnership.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opcure | A topical eye drop in development for age-related cataract</title>
+<meta name="description" content="Opcure is developing a patented topical eye drop designed to slow age-related cataract, built on established ophthalmic ingredients. Investigational product, not approved by any regulatory authority.">
+<link rel="canonical" href="https://opcure.net/">
+<meta name="theme-color" content="#0e1730">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Opcure">
+<meta property="og:title" content="Opcure | A topical eye drop designed to slow age-related cataract">
+<meta property="og:description" content="Patented in the US and China. Built on established ophthalmic ingredients. Preparing for its first studies in patients.">
+<meta property="og:url" content="https://opcure.net/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20653%20653%27%3E%3Cg%20fill%3D%27%2337699B%27%3E%3Cpath%20fill-rule%3D%27evenodd%27%20d%3D%27M653.000%20326.500C653.000%20239.907%20618.601%20156.860%20557.370%2095.630C496.140%2034.399%20413.093%200.000%20326.500%200.000C239.907%20-0.000%20156.860%2034.399%2095.630%2095.630C34.399%20156.860%200.000%20239.907%200.000%20326.500C-0.000%20413.093%2034.399%20496.140%2095.630%20557.370C156.860%20618.601%20239.907%20653.000%20326.500%20653.000C413.093%20653.000%20496.140%20618.601%20557.370%20557.370C618.601%20496.140%20653.000%20413.093%20653.000%20326.500ZM439.968%20277.116C439.968%20223.966%20418.854%20172.994%20381.272%20135.411C343.690%2097.829%20292.717%2076.716%20239.568%2076.716C186.419%2076.716%20135.446%2097.829%2097.864%20135.411C60.281%20172.994%2039.168%20223.966%2039.168%20277.116C39.168%20330.265%2060.281%20381.238%2097.864%20418.820C135.446%20456.402%20186.419%20477.516%20239.568%20477.516C292.717%20477.516%20343.690%20456.402%20381.272%20418.820C418.854%20381.238%20439.968%20330.265%20439.968%20277.116Z%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+<script>document.documentElement.classList.add('js');</script>
 <style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+/*
+  Opcure website. One self-contained file: no external requests.
+  Headline face: Bitstream Charter, embedded. Copyright 1989-1992 Bitstream Inc. Permission is granted
+  to use, copy, modify, sublicense, sell and redistribute the Bitstream Charter outline fonts for any
+  purpose and without restriction, provided that this notice is left intact on all copies.
+*/
+@font-face { font-family: "Opcure Charter"; src: url("data:font/woff;base64,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") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Opcure Charter"; src: url("data:font/woff;base64,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") format("woff"); font-weight: 700; font-style: normal; font-display: swap; }
 
 :root {
-  --bg-deep: #0b1120;
-  --bg-primary: #0b1120;
-  --bg-card: transparent;
-  --bg-card-hover: rgba(255,255,255,0.03);
-  --accent: #00c9a7;
-  --accent-glow: rgba(0,201,167,0.15);
-  --accent-soft: #00e6be;
-  --gold: #c4a862;
-  --text-primary: #f0f0f0;
-  --text-secondary: #c8cdd8;
-  --text-muted: #8a90a5;
-  --border: rgba(255,255,255,0.08);
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'Outfit', sans-serif;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: var(--font-body);
-  background: var(--bg-deep);
-  color: var(--text-primary);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ===== CLEAN BACKGROUND ===== */
-
-/* ===== NAVIGATION ===== */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  padding: 0 48px;
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  background: rgba(11,17,32,0.7);
-  border-bottom: 1px solid var(--border);
-  transition: all 0.4s ease;
-}
-
-nav.scrolled { background: rgba(11,17,32,0.95); }
-
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: var(--text-primary);
-}
-
-.nav-logo svg { height: 36px; width: auto; }
-
-.nav-logo span {
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 26px;
-  list-style: none;
-}
-
-.nav-links a {
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--text-secondary);
-  text-decoration: none;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  transition: color 0.3s;
-  position: relative;
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--accent);
-  transition: width 0.3s;
-}
-
-.nav-links a:hover { color: var(--text-primary); }
-.nav-links a:hover::after { width: 100%; }
-
-.nav-cta {
-  padding: 10px 24px !important;
-  background: var(--accent) !important;
-  color: var(--bg-deep) !important;
-  border-radius: 6px;
-  font-weight: 600 !important;
-  text-transform: uppercase !important;
-  font-size: 12px !important;
-  letter-spacing: 1px !important;
-  transition: all 0.3s !important;
-}
-
-.nav-cta:hover { background: var(--accent-soft) !important; transform: translateY(-1px); }
-.nav-cta::after { display: none !important; }
-
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-}
-
-.menu-toggle span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--text-primary);
-  margin: 5px 0;
-  transition: 0.3s;
-}
-
-/* ===== HERO ===== */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  padding: 120px 48px 80px;
-}
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-.hero-bg::before {
-  content: '';
-  position: absolute;
-  top: -30%;
-  right: -10%;
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-  animation: pulse 8s ease-in-out infinite;
-}
-
-.hero-bg::after {
-  content: '';
-  position: absolute;
-  bottom: -20%;
-  left: -10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(196,168,98,0.08) 0%, transparent 70%);
-  animation: pulse 10s ease-in-out infinite reverse;
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 0.5; }
-  50% { transform: scale(1.1); opacity: 1; }
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  max-width: 900px;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 20px;
-  border: 1px solid var(--border);
-  border-radius: 100px;
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 40px;
-  background: rgba(0,201,167,0.05);
-}
-
-.hero-badge::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  background: var(--accent);
-  border-radius: 50%;
-  animation: blink 2s infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-
-.hero h1 {
-  font-family: var(--font-display);
-  font-size: clamp(42px, 6vw, 78px);
-  font-weight: 600;
-  line-height: 1.1;
-  letter-spacing: -1.5px;
-  margin-bottom: 28px;
-  color: var(--text-primary);
-}
-
-.hero h1 em {
-  font-style: italic;
-  color: var(--accent);
-}
-
-.hero-sub {
-  font-size: clamp(16px, 2vw, 20px);
-  color: var(--text-secondary);
-  line-height: 1.7;
-  max-width: 640px;
-  margin: 0 auto 48px;
-  font-weight: 300;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn-primary {
-  padding: 16px 36px;
-  background: var(--accent);
-  color: var(--bg-deep);
-  border: none;
-  border-radius: 8px;
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.3s;
-  text-decoration: none;
-}
-
-.btn-primary:hover { background: var(--accent-soft); transform: translateY(-2px); box-shadow: 0 8px 30px var(--accent-glow); }
-
-.btn-secondary {
-  padding: 16px 36px;
-  background: transparent;
-  color: var(--text-primary);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.3s;
-  text-decoration: none;
-}
-
-.btn-secondary:hover { border-color: var(--text-secondary); background: rgba(255,255,255,0.05); }
-
-.hero-scroll {
-  position: absolute;
-  bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  color: var(--text-muted);
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  z-index: 1;
-}
-
-.hero-scroll-line {
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, var(--accent), transparent);
-  animation: scrollDown 2s infinite;
-}
-
-@keyframes scrollDown {
-  0% { transform: scaleY(0); transform-origin: top; }
-  50% { transform: scaleY(1); transform-origin: top; }
-  51% { transform: scaleY(1); transform-origin: bottom; }
-  100% { transform: scaleY(0); transform-origin: bottom; }
-}
-
-/* ===== SECTIONS ===== */
-section { padding: 120px 48px; position: relative; }
-
-.section-label {
-  font-size: 12px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 16px;
-  font-weight: 500;
-}
-
-.section-title {
-  font-family: var(--font-display);
-  font-size: clamp(32px, 4vw, 54px);
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -1px;
-  margin-bottom: 24px;
-}
-
-.section-desc {
-  font-size: 18px;
-  color: var(--text-secondary);
-  line-height: 1.8;
-  max-width: 680px;
-  font-weight: 300;
-}
-
-.container { max-width: 1200px; margin: 0 auto; }
-
-/* ===== PROBLEM ===== */
-.problem { background: var(--bg-primary); }
-
-.problem-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  margin-top: 64px;
-}
-
-.problem-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.stat-item {
-  padding: 32px;
-  border-left: 2px solid var(--accent);
-  background: var(--bg-card);
-  border-radius: 0 12px 12px 0;
-  transition: all 0.3s;
-}
-
-.stat-item:hover { background: var(--bg-card-hover); transform: translateX(4px); }
-
-.stat-number {
-  font-family: var(--font-display);
-  font-size: 42px;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 8px;
-}
-
-.stat-label {
-  font-size: 15px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  font-weight: 300;
-}
-
-.problem-text { padding-right: 40px; }
-
-.problem-quote {
-  margin-top: 40px;
-  padding: 28px 32px;
-  border-radius: 12px;
-  background: transparent;
-  border: 1px solid rgba(0,201,167,0.12);
-  position: relative;
-}
-
-.problem-quote p {
-  font-family: var(--font-display);
-  font-size: 17px;
-  font-style: italic;
-  color: var(--text-secondary);
-  line-height: 1.7;
-}
-
-.problem-quote cite {
-  display: block;
-  margin-top: 12px;
-  font-size: 13px;
-  font-style: normal;
-  color: var(--text-muted);
-}
-
-/* ===== CURRENT SOLUTION ===== */
-.current-solution {
-  background: var(--bg-deep);
-  text-align: center;
-}
-
-.current-solution .section-desc { margin: 0 auto 48px; }
-
-.gap-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.gap-card {
-  padding: 36px 28px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  text-align: center;
-  transition: all 0.4s;
-}
-
-.gap-card:hover { border-color: rgba(0,201,167,0.2); background: var(--bg-card-hover); transform: translateY(-4px); }
-
-.gap-card-icon {
-  width: 48px;
-  height: 48px;
-  margin: 0 auto 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--accent-glow);
-  border-radius: 12px;
-}
-
-.gap-card-icon svg { width: 24px; height: 24px; stroke: var(--accent); fill: none; stroke-width: 1.5; }
-
-.gap-card h4 {
-  font-family: var(--font-display);
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: var(--text-primary);
-}
-
-.gap-card p {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  font-weight: 300;
-}
-
-/* ===== SOLUTION ===== */
-.solution { background: var(--bg-primary); }
-
-.solution-header { text-align: center; margin-bottom: 72px; }
-.solution-header .section-desc { margin: 0 auto; }
-
-.solution-desc-block {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 72px;
-  padding: 40px;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  background: transparent;
-}
-
-.solution-desc-block p {
-  font-size: 18px;
-  color: var(--text-secondary);
-  line-height: 1.8;
-  font-weight: 300;
-}
-
-.solution-desc-block strong { color: var(--text-primary); font-weight: 500; }
-
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-
-.benefit-card {
-  padding: 40px 28px;
-  border-radius: 20px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  text-align: center;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  position: relative;
-  overflow: hidden;
-}
-
-.benefit-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-
-.benefit-card:hover { transform: translateY(-8px); border-color: rgba(0,201,167,0.15); }
-.benefit-card:hover::before { opacity: 1; }
-
-.benefit-icon {
-  font-size: 36px;
-  margin-bottom: 20px;
-  display: block;
-}
-
-.benefit-card h4 {
-  font-family: var(--font-display);
-  font-size: 20px;
-  margin-bottom: 12px;
-  color: var(--text-primary);
-}
-
-.benefit-card p {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  font-weight: 300;
-}
-
-.benefit-highlight {
-  margin-top: 16px;
-  display: inline-block;
-  padding: 6px 14px;
-  background: var(--accent-glow);
-  border-radius: 100px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--accent);
-}
-
-/* ===== MARKET ===== */
-.market { background: var(--bg-deep); position: relative; }
-
-.market-header { text-align: center; margin-bottom: 72px; }
-.market-header .section-desc { margin: 0 auto; }
-
-.market-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 32px;
-}
-
-.market-card {
-  padding: 44px 32px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  text-align: center;
-  transition: all 0.4s;
-}
-
-.market-card:hover { border-color: rgba(0,201,167,0.15); transform: translateY(-4px); }
-
-.market-card .number {
-  font-family: var(--font-display);
-  font-size: clamp(36px, 4vw, 52px);
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 4px;
-  line-height: 1;
-}
-
-.market-card .number-suffix {
-  font-family: var(--font-display);
-  font-size: clamp(20px, 2vw, 28px);
-  font-weight: 400;
-  color: var(--accent);
-}
-
-.market-card .label {
-  font-size: 15px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  font-weight: 300;
-  margin-top: 12px;
-}
-
-.market-row-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
-.patent-badge {
-  margin-top: 48px;
-  text-align: center;
-  padding: 32px;
-  border-radius: 16px;
-  background: transparent;
-  border: 1px solid rgba(0,201,167,0.12);
-}
-
-.patent-badge .number {
-  font-family: var(--font-display);
-  font-size: 64px;
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--accent), var(--gold));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.patent-badge .label {
-  font-size: 16px;
-  color: var(--text-secondary);
-  margin-top: 8px;
-}
-
-/* ===== WHY OPCURE ===== */
-.why-opcure { background: var(--bg-primary); }
-
-.why-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-top: 64px;
-}
-
-.why-card {
-  padding: 40px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  transition: all 0.4s;
-  position: relative;
-}
-
-.why-card:hover { border-color: rgba(0,201,167,0.15); transform: translateY(-4px); }
-
-.why-card-number {
-  font-family: var(--font-display);
-  font-size: 48px;
-  font-weight: 700;
-  color: rgba(0,201,167,0.1);
-  position: absolute;
-  top: 20px;
-  right: 28px;
-}
-
-.why-card h4 {
-  font-family: var(--font-display);
-  font-size: 22px;
-  color: var(--accent);
-  margin-bottom: 14px;
-}
-
-.why-card p {
-  font-size: 15px;
-  color: var(--text-secondary);
-  line-height: 1.8;
-  font-weight: 300;
-}
-
-/* ===== TEAM ===== */
-.team {
-  background: var(--bg-deep);
-  text-align: center;
-}
-
-.team-header { margin-bottom: 64px; }
-.team-header .section-desc { margin: 0 auto; }
-
-.team-stats {
-  display: flex;
-  justify-content: center;
-  gap: 72px;
-  margin-bottom: 56px;
-}
-
-.team-stat { text-align: center; }
-
-.team-stat .number {
-  font-family: var(--font-display);
-  font-size: 48px;
-  font-weight: 700;
-  color: var(--accent);
-}
-
-.team-stat .label {
-  font-size: 14px;
-  color: var(--text-secondary);
-  margin-top: 4px;
-  font-weight: 300;
-}
-
-.expertise-tags {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.expertise-tag {
-  padding: 12px 24px;
-  border: 1px solid var(--border);
-  border-radius: 100px;
-  font-size: 14px;
-  color: var(--text-secondary);
-  font-weight: 400;
-  transition: all 0.3s;
-}
-
-.expertise-tag:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
-
-/* ===== ROADMAP ===== */
-.roadmap { background: var(--bg-primary); }
-
-.roadmap-header { text-align: center; margin-bottom: 80px; }
-.roadmap-header .section-desc { margin: 0 auto; }
-
-.timeline { position: relative; max-width: 800px; margin: 0 auto; }
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 24px;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(to bottom, var(--accent), var(--border));
-}
-
-.timeline-item {
-  position: relative;
-  padding-left: 72px;
-  padding-bottom: 56px;
-}
-
-.timeline-item:last-child { padding-bottom: 0; }
-
-.timeline-dot {
-  position: absolute;
-  left: 14px;
-  top: 6px;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: var(--bg-deep);
-  border: 2px solid var(--accent);
-  z-index: 1;
-}
-
-.timeline-dot::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-}
-
-.timeline-date {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 8px;
-}
-
-.timeline-title {
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: var(--text-primary);
-}
-
-.timeline-desc {
-  font-size: 15px;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  font-weight: 300;
-}
-
-/* ===== CONTACT / CTA ===== */
-.contact {
-  background: var(--bg-deep);
-  text-align: center;
-  padding: 140px 48px;
-  position: relative;
-  overflow: hidden;
-}
-
-.contact::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-  opacity: 0.4;
-}
-
-.contact-content { position: relative; z-index: 1; }
-
-.contact-logo {
-  margin-bottom: 40px;
-}
-
-.contact-logo svg { height: 56px; width: auto; }
-
-.contact h2 {
-  font-family: var(--font-display);
-  font-size: clamp(32px, 4vw, 52px);
-  font-weight: 600;
-  line-height: 1.15;
-  margin-bottom: 20px;
-  letter-spacing: -1px;
-}
-
-.contact h2 em { font-style: italic; color: var(--accent); }
-
-.contact-sub {
-  font-size: 18px;
-  color: var(--text-secondary);
-  margin-bottom: 48px;
-  font-weight: 300;
-}
-
-.contact-email {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 18px 40px;
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  font-size: 18px;
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s;
-  letter-spacing: 0.5px;
-}
-
-.contact-email:hover { border-color: var(--accent); background: var(--accent-glow); transform: translateY(-2px); }
-
-.contact-email svg { width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 1.5; }
-
-/* ===== FOOTER ===== */
-footer {
-  padding: 40px 48px;
-  border-top: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  background: var(--bg-deep);
-}
-
-.footer-inner { max-width: 1200px; margin: 0 auto; width: 100%; }
-
-.footer-disclaimer {
-  font-size: 11.5px;
-  color: var(--text-muted);
-  line-height: 1.7;
-  font-weight: 300;
-}
-
-.footer-disclaimer strong { color: var(--text-secondary); font-weight: 500; }
-
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid var(--border);
-  padding-top: 20px;
-}
-
-footer p {
-  font-size: 13px;
-  color: var(--text-muted);
-  font-weight: 300;
-}
-
-.footer-links {
-  display: flex;
-  gap: 24px;
-}
-
-.footer-links a {
-  font-size: 13px;
-  color: var(--text-muted);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer-links a:hover { color: var(--accent); }
-
-/* ===== DIVIDER ===== */
-.section-divider {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border), transparent);
-}
-
-/* ===== SCROLL ANIMATIONS ===== */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.reveal.visible { opacity: 1; transform: translateY(0); }
-
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-.reveal-delay-5 { transition-delay: 0.5s; }
-
-/* ===== SHARED BULLET LIST ===== */
-.card-list { list-style: none; text-align: left; }
-
-.card-list li {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  font-weight: 300;
-  padding-left: 18px;
-  position: relative;
-  margin-bottom: 10px;
-}
-
-.card-list li:last-child { margin-bottom: 0; }
-
-.card-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 9px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--accent);
-}
-
-/* ===== SOURCE NOTES ===== */
-.source-note {
-  font-size: 12.5px;
-  color: var(--text-muted);
-  line-height: 1.7;
-  font-weight: 300;
-  margin-top: 28px;
-}
-
-.source-note-centered {
-  text-align: center;
-  max-width: 920px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ===== MARKET BREAKDOWN ===== */
-.breakdown-label {
-  font-size: 12px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin: 56px 0 20px;
-  font-weight: 500;
-  text-align: center;
-}
-
-.market-breakdown {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  overflow: hidden;
-  background: var(--border);
-}
-
-.breakdown-item {
-  padding: 26px 24px;
-  background: var(--bg-deep);
-  text-align: center;
-  transition: background 0.3s;
-}
-
-.breakdown-item:hover { background: rgba(255,255,255,0.02); }
-
-.breakdown-item .region {
-  font-size: 14px;
-  color: var(--text-secondary);
-  font-weight: 400;
-}
-
-.breakdown-item .value {
-  font-family: var(--font-display);
-  font-size: 30px;
-  font-weight: 700;
-  color: var(--accent);
-  margin: 6px 0 4px;
-  line-height: 1;
-}
-
-.breakdown-item .src {
-  font-size: 11.5px;
-  color: var(--text-muted);
-  font-weight: 300;
-}
-
-/* ===== LEADERSHIP ===== */
-.leadership-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  max-width: 1000px;
-  margin: 0 auto 56px;
-  text-align: left;
-}
-
-.leader-card {
-  padding: 32px;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  transition: all 0.4s;
-}
-
-.leader-card:hover { border-color: rgba(0,201,167,0.15); transform: translateY(-4px); }
-
-.leader-card h4 {
-  font-family: var(--font-display);
-  font-size: 21px;
-  color: var(--text-primary);
-  margin-bottom: 6px;
-}
-
-.leader-card .role {
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 16px;
-  font-weight: 500;
-}
-
-.leader-card p {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.8;
-  font-weight: 300;
-}
-
-/* ===== PARTNERS / NEXT STEPS BLOCKS ===== */
-.partners-block {
-  max-width: 860px;
-  margin: 56px auto 0;
-  padding: 32px 36px;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  text-align: left;
-}
-
-.next-steps {
-  max-width: 760px;
-  margin: 48px auto 0;
-  padding: 32px 36px;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  text-align: left;
-}
-
-.partners-block h4, .next-steps h4 {
-  font-size: 12px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 18px;
-  font-weight: 500;
-}
-
-.timeline-item .card-list { margin-top: 12px; }
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 1024px) {
-  .market-breakdown { grid-template-columns: repeat(2, 1fr); }
-  .leadership-grid { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 1024px) {
-  section { padding: 80px 32px; }
-  .problem-grid { grid-template-columns: 1fr; gap: 48px; }
-  .problem-text { padding-right: 0; }
-  .benefits-grid { grid-template-columns: 1fr 1fr; }
-  .market-grid { grid-template-columns: 1fr 1fr; }
-  .why-grid { grid-template-columns: 1fr; }
-  .team-stats { gap: 48px; }
-}
-
-@media (max-width: 768px) {
-  nav { padding: 0 20px; height: 64px; }
-  .nav-links { display: none; }
+  --navy: #0e1730;
+  --navy-2: #16223f;
+  --navy-line: #263760;
+  --deep: #0a1124;
+  --blue: #37699b;
+  --blue-ink: #2c5781;
+  --sky: #8fb3d9;
+  --zinc: #7fb4ec;
+  --clear: #e3edf8;
+  --paper: #f4f7fb;
+  --white: #ffffff;
+  --amber: #c98a2e;
+  --amber-ink: #8a5a12;
+  --ink: #0e1730;
+  --body: #3b495d;
+  --muted: #5b697c;
+  --line: #d9e1ea;
+  --on-dark: #eef3fa;
+  --on-dark-2: #b9c6d8;
+  --on-dark-3: #8e9fb7;
+  --serif: "Opcure Charter", Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --wrap: 1180px;
+  --nav-h: 68px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 8px); -webkit-text-size-adjust: 100%; }
+body { font-family: var(--sans); font-size: 18px; line-height: 1.6; color: var(--body); background: var(--white); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+svg { display: block; }
+a { color: var(--blue-ink); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; border-radius: 4px; }
+ul, ol { list-style: none; }
+p { max-width: 64ch; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip-link { position: absolute; left: 16px; top: -60px; z-index: 2000; background: var(--white); color: var(--ink); padding: 10px 16px; border-radius: 8px; font-weight: 600; text-decoration: none; }
+.skip-link:focus { top: 12px; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 28px; }
+.nowrap { white-space: nowrap; }
+
+/* ---------- Type ---------- */
+h1, h2, h3, .serif { font-family: var(--serif); color: var(--ink); font-weight: 700; letter-spacing: -0.012em; }
+h1 { font-size: clamp(44px, 5.4vw, 72px); line-height: 1.03; }
+h2 { font-size: clamp(34px, 3.9vw, 52px); line-height: 1.07; max-width: 21ch; }
+h3 { font-size: 22px; line-height: 1.2; margin-bottom: 8px; }
+.lead { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.55; color: var(--body); }
+.small { font-size: 14px; line-height: 1.55; color: var(--muted); }
+.kicker { font-family: var(--sans); font-size: 15px; font-weight: 600; color: var(--blue); margin-bottom: 14px; display: block; }
+.dark { background: var(--navy); color: var(--on-dark-2); }
+.dark h1, .dark h2, .dark h3, .dark .serif { color: var(--white); }
+.dark .lead { color: var(--on-dark-2); }
+.dark .small { color: var(--on-dark-3); }
+.dark .kicker { color: var(--sky); }
+.dark a { color: var(--sky); }
+
+/* ---------- Navigation ---------- */
+.site-nav { position: fixed; inset: 0 0 auto 0; z-index: 1000; height: var(--nav-h); color: var(--white); transition: background 0.35s ease, box-shadow 0.35s ease; }
+.site-nav.solid { background: rgba(14, 23, 48, 0.96); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(255,255,255,0.06), 0 10px 30px rgba(4, 9, 22, 0.25); }
+.site-nav .wrap { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand { display: inline-flex; color: var(--white); }
+.brand svg { height: 27px; width: auto; }
+.nav-links { display: flex; align-items: center; gap: 4px; }
+.nav-links a { display: block; color: var(--on-dark-2); text-decoration: none; font-size: 15px; font-weight: 500; padding: 8px 12px; border-radius: 8px; transition: color 0.2s, background 0.2s; }
+.nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.06); }
+.nav-links a.active { color: var(--white); }
+.nav-links a.active::after { content: ""; display: block; height: 2px; margin-top: 3px; border-radius: 2px; background: var(--sky); }
+.nav-links .nav-cta { color: var(--navy); background: var(--sky); font-weight: 700; margin-left: 10px; padding: 9px 18px; }
+.nav-links .nav-cta:hover { background: var(--white); color: var(--navy); }
+.progress { position: absolute; left: 0; bottom: 0; height: 2px; width: 100%; background: var(--sky); transform-origin: 0 50%; transform: scaleX(0); opacity: 0; transition: opacity 0.3s; }
+.site-nav.solid .progress { opacity: 1; }
+.menu-toggle { display: none; background: none; border: 0; cursor: pointer; padding: 10px; color: var(--white); }
+.menu-toggle span { display: block; width: 24px; height: 2px; background: currentColor; margin: 5px 0; transition: transform 0.25s, opacity 0.25s; }
+.menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ---------- Section frame and lens-curve edges ---------- */
+.section { position: relative; padding: 120px 0; }
+.paper { background: var(--paper); }
+.edge { position: absolute; left: 0; width: 100%; height: clamp(44px, 6.5vw, 104px); pointer-events: none; }
+.edge-bottom { bottom: -1px; }
+.edge-top { top: -1px; }
+.edge path { fill: currentColor; }
+.edge-sm { height: clamp(26px, 3.6vw, 56px); }
+.head { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 32px 72px; align-items: start; margin-bottom: 64px; }
+.head .lead { padding-top: 8px; }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; overflow: hidden; background: radial-gradient(120% 90% at 78% 40%, #15244a 0%, var(--navy) 58%); padding: calc(var(--nav-h) + 72px) 0 168px; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+.hero h1 { margin-bottom: 26px; max-width: 15ch; }
+.hero .lead { max-width: 34ch; margin-bottom: 36px; color: var(--on-dark-2); }
+.actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 22px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 15px 26px; border-radius: 999px; font-weight: 700; font-size: 16px; text-decoration: none; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+.btn-primary { background: var(--sky); color: var(--navy); }
+.btn-primary:hover { background: var(--white); }
+.btn-ghost { border: 1px solid rgba(255,255,255,0.3); color: var(--white); }
+.btn-ghost:hover { border-color: var(--white); }
+.dark a.btn-primary { color: var(--navy); }
+.dark a.btn-ghost { color: var(--white); }
+.status-note { font-size: 14px; color: var(--on-dark-3); }
+.eye { width: 100%; height: auto; max-width: 640px; margin-left: auto; overflow: visible; }
+.eye .wall { fill: none; stroke: var(--sky); stroke-width: 1.6; opacity: 0.75; }
+.eye .iris { stroke: var(--sky); stroke-width: 6; stroke-linecap: round; opacity: 0.55; }
+.eye .lens-body { fill: url(#lensFill); stroke: var(--sky); stroke-width: 1.6; }
+.eye .epi { fill: none; stroke: var(--zinc); stroke-width: 3.2; stroke-linecap: round; filter: url(#glow); }
+.eye .ray { fill: none; stroke: #c9dcf2; stroke-width: 1.1; opacity: 0.45; }
+.eye .drop { fill: var(--zinc); }
+.eye .ion { fill: var(--zinc); filter: url(#glow); }
+.eye .ripple { fill: none; stroke: var(--zinc); stroke-width: 1.4; opacity: 0; }
+.eye .label { font-family: var(--sans); font-size: 13px; fill: var(--on-dark-3); }
+.eye .leader { stroke: var(--on-dark-3); stroke-width: 1; opacity: 0.6; }
+.hero-facts { display: flex; flex-wrap: wrap; gap: 0; margin-top: 76px; border-top: 1px solid var(--navy-line); }
+.hero-facts div { flex: 1 1 220px; padding: 20px 28px 0 0; margin-right: 28px; }
+.hero-facts dt { font-size: 14px; color: var(--on-dark-3); margin-bottom: 4px; }
+.hero-facts dd { font-family: var(--serif); font-size: 21px; line-height: 1.3; color: var(--white); }
+
+/* Hero load sequence: the one orchestrated motion moment */
+@media (prefers-reduced-motion: no-preference) {
+  .js .eye .draw { stroke-dasharray: 1400; stroke-dashoffset: 1400; animation: draw 1.6s cubic-bezier(.6,.05,.25,1) forwards; }
+  .js .eye .ray { stroke-dasharray: 700; stroke-dashoffset: 700; animation: draw 1.6s ease-out forwards; }
+  .js .eye .r1 { animation-delay: 0.9s; } .js .eye .r2 { animation-delay: 1.0s; } .js .eye .r3 { animation-delay: 1.1s; } .js .eye .r4 { animation-delay: 1.2s; } .js .eye .r5 { animation-delay: 1.3s; }
+  .js .eye .lens-body { opacity: 0; animation: fade 0.9s 0.6s ease forwards; }
+  .js .eye .label, .js .eye .leader { opacity: 0; animation: fade 0.8s 2.9s ease forwards; }
+  .js .eye .drop { transform: translateY(-150px); opacity: 0; animation: fall 0.75s 2.0s cubic-bezier(.55,0,.9,.4) forwards; }
+  .js .eye .ripple { animation: ripple 0.9s 2.7s ease-out forwards; }
+  .js .eye .ion { opacity: 0; animation: travel 1.6s ease-in-out forwards; }
+  .js .eye .ion:nth-of-type(1) { animation-delay: 2.85s; } .js .eye .ion:nth-of-type(2) { animation-delay: 2.95s; } .js .eye .ion:nth-of-type(3) { animation-delay: 3.05s; }
+  .js .eye .ion:nth-of-type(4) { animation-delay: 3.15s; } .js .eye .ion:nth-of-type(5) { animation-delay: 3.25s; } .js .eye .ion:nth-of-type(6) { animation-delay: 3.35s; }
+  .js .eye .epi { stroke-dasharray: 260; stroke-dashoffset: 260; animation: draw 1.1s 4.1s ease-out forwards; }
+}
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes fade { to { opacity: 1; } }
+@keyframes fall { 0% { opacity: 0; transform: translateY(-150px); } 15% { opacity: 1; } 92% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(4px); } }
+@keyframes ripple { 0% { opacity: 0.9; transform: scale(0.4); } 100% { opacity: 0; transform: scale(1.6); } }
+@keyframes travel { 0% { opacity: 0; transform: translate(var(--dx), var(--dy)); } 20% { opacity: 1; } 100% { opacity: 1; transform: translate(0, 0); } }
+.eye .ripple { transform-box: fill-box; transform-origin: center; }
+
+/* ---------- Problem ---------- */
+.figures { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px; margin-bottom: 72px; }
+.figure-num { font-family: var(--serif); font-weight: 700; font-size: clamp(48px, 5.4vw, 76px); line-height: 0.95; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 14px; }
+.figure-num.accent { color: var(--amber-ink); }
+.figures p { font-size: 16px; line-height: 1.5; color: var(--body); max-width: 26ch; }
+.share { display: block; height: 6px; border-radius: 3px; background: var(--line); margin: 0 0 14px; max-width: 200px; overflow: hidden; }
+.share i { display: block; height: 100%; width: 40%; background: var(--amber); border-radius: 3px; }
+figure { margin: 0; }
+.progression { background: var(--white); border-radius: 28px; padding: 40px 40px 28px; box-shadow: 0 1px 0 var(--line), 0 30px 60px -40px rgba(14, 23, 48, 0.35); }
+.progression svg { width: 100%; height: auto; }
+.fig-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.swipe { display: none; font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+.progression text { font-family: var(--sans); }
+figcaption { font-size: 14px; line-height: 1.55; color: var(--muted); margin-top: 18px; max-width: 80ch; }
+.dark figcaption { color: var(--on-dark-3); }
+.notes { display: grid; grid-template-columns: minmax(0, 760px); gap: 56px; margin-top: 56px; align-items: start; }
+.note-sa { border-left: 3px solid var(--amber); padding-left: 24px; }
+.note-sa h3 { font-size: 20px; margin-bottom: 6px; }
+.sources { font-size: 13px; line-height: 1.6; color: var(--muted); margin-top: 40px; max-width: 110ch; }
+.dark .sources { color: var(--on-dark-3); }
+
+/* ---------- Approach ---------- */
+.approach-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 72px; align-items: start; }
+.monograph { border-top: 2px solid var(--ink); }
+.monograph-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 24px; padding: 26px 0; border-bottom: 1px solid var(--line); }
+.monograph-row h3 { font-size: 26px; margin: 0; }
+.monograph-row .strength { font-family: var(--serif); font-weight: 700; font-size: 30px; color: var(--blue); line-height: 1.1; }
+.monograph-row .role { grid-column: 1 / -1; display: flex; gap: 14px; align-items: baseline; }
+.role b { flex: none; font-size: 13px; font-weight: 700; color: var(--blue-ink); background: var(--clear); border-radius: 999px; padding: 3px 11px; }
+.role span { font-size: 16px; line-height: 1.55; }
+.monograph-foot { font-size: 14px; color: var(--muted); padding-top: 14px; }
+.dosing { background: var(--navy); color: var(--on-dark-2); border-radius: 28px; padding: 40px; position: relative; overflow: hidden; }
+.dosing h3 { color: var(--white); font-size: 26px; margin-bottom: 26px; }
+.drops { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 10px; }
+.drops div { text-align: center; }
+.drops svg { width: 34px; height: 44px; margin: 0 auto 8px; }
+.drops span { font-size: 13px; color: var(--on-dark-3); }
+.dose-line { font-family: var(--serif); font-size: 22px; color: var(--white); margin: 16px 0 26px; padding-bottom: 26px; border-bottom: 1px solid var(--navy-line); }
+.aims li { position: relative; padding-left: 26px; margin-bottom: 14px; font-size: 17px; }
+.aims li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 9px; height: 9px; border-radius: 50%; border: 2px solid var(--sky); }
+.aims strong { color: var(--white); font-weight: 600; }
+
+/* ---------- Science ---------- */
+.mech { background: var(--white); border-radius: 28px; padding: 36px 36px 28px; box-shadow: 0 1px 0 var(--line), 0 30px 60px -40px rgba(14, 23, 48, 0.35); }
+.mech-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.mech svg { width: 100%; min-width: 760px; height: auto; }
+.mech text { font-family: var(--sans); }
+.steps4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; margin-top: 36px; counter-reset: s; }
+.steps4 li { counter-increment: s; }
+.steps4 li::before { content: counter(s); display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--blue); color: var(--white); font-weight: 700; font-size: 14px; margin-bottom: 12px; }
+.steps4 h3 { font-size: 20px; }
+.steps4 p { font-size: 16px; line-height: 1.55; }
+.pull-kicker { margin-top: 96px; }
+.pull { font-family: var(--serif); font-size: clamp(24px, 2.6vw, 34px); line-height: 1.3; color: var(--ink); max-width: 34ch; }
+.pull-src { font-size: 15px; color: var(--muted); margin-top: 14px; max-width: 60ch; }
+.sub { font-size: clamp(26px, 2.6vw, 34px); margin: 104px 0 10px; max-width: 24ch; }
+.sub + p { margin-bottom: 30px; }
+/* Mechanism figure motion: runs once when the figure scrolls into view */
+@media (prefers-reduced-motion: no-preference) {
+  .js .mech .zn { opacity: 0; transform: translate(var(--dx), var(--dy)); transition: transform 1.6s cubic-bezier(.4,0,.2,1), opacity 0.5s; }
+  .js .mech.play .zn { opacity: 1; transform: none; }
+  .js .mech.play .zn:nth-of-type(2) { transition-delay: 0.12s; } .js .mech.play .zn:nth-of-type(3) { transition-delay: 0.24s; }
+  .js .mech.play .zn:nth-of-type(4) { transition-delay: 0.36s; } .js .mech.play .zn:nth-of-type(5) { transition-delay: 0.48s; }
+  .js .mech .ros { transition: opacity 0.8s 2.0s; }
+  .js .mech.play .ros { opacity: 0.35; }
+  .js .mech .shield { opacity: 0.35; transition: opacity 0.6s 1.7s; }
+  .js .mech.play .shield { opacity: 1; }
+}
+
+/* ---------- Patents ---------- */
+.patents { overflow: hidden; }
+.patent-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; margin-top: 72px; }
+.patent-list > div { border-top: 1px solid var(--navy-line); padding-top: 22px; }
+.patent-list .where { font-size: 14px; color: var(--on-dark-3); margin-bottom: 6px; }
+.patent-list .num { font-family: var(--serif); font-weight: 700; font-size: 27px; color: var(--white); margin-bottom: 10px; letter-spacing: -0.01em; }
+.patent-list p { font-size: 16px; margin-bottom: 12px; }
+.patent-list a { font-weight: 600; font-size: 15px; }
+/* ---------- Patent timeline ---------- */
+.ptl { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; margin: 8px 0 0; padding-top: 34px; }
+.ptl-bar { position: absolute; top: 9px; left: 0; right: 0; height: 2px; background: var(--navy-line); }
+.ptl-bar i { position: absolute; top: -3px; left: 40%; right: 0; height: 8px; border-radius: 4px; background: linear-gradient(90deg, var(--blue), var(--sky)); }
+.ptl-item { position: relative; }
+.ptl-dot { position: absolute; top: -32px; left: 0; width: 16px; height: 16px; border-radius: 50%; background: var(--navy); border: 3px solid var(--on-dark-3); }
+.ptl-item.key .ptl-dot { border-color: var(--sky); background: var(--sky); }
+.ptl-item.end .ptl-dot { border-color: var(--sky); }
+.ptl-year { font-family: var(--serif); font-weight: 700; font-size: clamp(30px, 3vw, 42px); line-height: 1; color: var(--white); margin-bottom: 8px; }
+.ptl-item.key .ptl-year { color: var(--sky); }
+.ptl-item p:last-child { font-size: 15px; line-height: 1.45; max-width: 20ch; }
+.ip-inventors { margin-top: 48px; font-size: 16px; color: var(--on-dark-2); }
+.approx { font-size: 0.55em; vertical-align: 0.28em; margin-right: 2px; }
+.owners.owners-3 { grid-template-columns: 2fr 1fr; }
+.nodes.nodes-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.nodes.nodes-3::before { right: 33.3%; background: linear-gradient(90deg, var(--blue) 0 50%, var(--ink) 50% 100%); }
+.nodes-3 .node:nth-child(2) .dot { border-color: var(--blue); background: var(--blue); color: var(--white); }
+.nodes-3 .node:nth-child(3) .dot { border-color: var(--ink); color: var(--ink); }
+
+/* ---------- Business model ---------- */
+.flow { position: relative; margin-top: 8px; }
+.owners { display: grid; grid-template-columns: 1fr 3fr; gap: 0; margin-bottom: 18px; font-size: 14px; font-weight: 600; }
+.owners span { padding: 0 0 8px; border-bottom: 3px solid var(--blue); color: var(--blue-ink); margin-right: 10px; }
+.owners span + span { border-color: var(--ink); color: var(--ink); margin-right: 0; margin-left: 10px; }
+.nodes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; position: relative; }
+.nodes::before { content: ""; position: absolute; top: 15px; left: 15px; right: 12.5%; height: 2px; background: linear-gradient(90deg, var(--blue) 0 25%, var(--ink) 25% 100%); }
+.node { position: relative; padding-right: 32px; }
+.node .dot { position: relative; z-index: 1; width: 32px; height: 32px; border-radius: 50%; background: var(--white); border: 2px solid var(--ink); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 18px; }
+.node:first-child .dot { border-color: var(--blue); background: var(--blue); color: var(--white); }
+.node:nth-child(2) .dot { border-color: var(--blue); color: var(--blue); }
+.node h3 { font-size: 22px; }
+.node p { font-size: 16px; line-height: 1.55; }
+.statement { font-family: var(--serif); font-size: clamp(22px, 2.2vw, 28px); color: var(--ink); margin-top: 48px; }
+
+/* ---------- Team ---------- */
+.people { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px; }
+.person .mono { width: 76px; height: 76px; margin-bottom: 20px; }
+.person h3 { font-size: 23px; margin-bottom: 2px; }
+.person .role { font-size: 15px; font-weight: 600; color: var(--blue); margin-bottom: 12px; }
+.person p { font-size: 16px; line-height: 1.55; }
+.team-more { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 72px; padding-top: 40px; border-top: 1px solid var(--line); }
+.team-more h3 { font-size: 22px; }
+.team-more p { font-size: 17px; }
+
+/* ---------- Contact ---------- */
+.contact { overflow: hidden; }
+.contact-mark { position: absolute; right: -260px; bottom: -330px; width: 620px; height: 620px; color: var(--white); opacity: 0.04; pointer-events: none; }
+.contact .wrap { position: relative; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin: 0 0 80px; }
+.contact-grid h3 { font-size: 24px; margin-bottom: 16px; }
+.contact-grid li { position: relative; padding-left: 26px; margin-bottom: 14px; font-size: 17px; }
+.contact-grid li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 9px; height: 9px; border-radius: 50%; border: 2px solid var(--sky); }
+.cta { border-top: 1px solid var(--navy-line); padding-top: 56px; display: grid; grid-template-columns: minmax(0, 1.2fr) auto; gap: 40px; align-items: center; }
+.cta h3 { font-size: clamp(30px, 3.4vw, 44px); margin-bottom: 12px; }
+.cta p { font-size: 18px; }
+.btn-mail { font-size: 19px; padding: 18px 32px; }
+.patient-note { font-size: 14px; color: var(--on-dark-3); margin-top: 40px; max-width: 80ch; }
+
+/* ---------- Footer ---------- */
+footer { background: var(--deep); color: var(--on-dark-3); padding: 48px 0 40px; font-size: 14px; }
+footer .brand svg { height: 23px; }
+.footer-top { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; padding-bottom: 24px; border-bottom: 1px solid #1b2746; margin-bottom: 24px; }
+.footer-top a { color: var(--on-dark-2); text-decoration: none; }
+.footer-top a:hover { color: var(--white); }
+.legal { max-width: 110ch; line-height: 1.65; }
+.legal strong { color: var(--on-dark-2); font-weight: 600; }
+.copyright { margin-top: 14px; }
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1080px) {
+  .figures { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .steps4, .people { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .approach-grid { grid-template-columns: 1fr; gap: 48px; }
+}
+@media (max-width: 920px) {
   .menu-toggle { display: block; }
-  .nav-links.open {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 64px;
-    left: 0;
-    right: 0;
-    background: rgba(11,17,32,0.97);
-    padding: 24px 20px;
-    gap: 20px;
-    border-bottom: 1px solid var(--border);
-    backdrop-filter: blur(20px);
-  }
-  section { padding: 56px 20px; }
-  .hero { padding: 100px 20px 60px; min-height: auto; min-height: 100svh; }
-  .hero h1 { font-size: 32px; letter-spacing: -0.5px; line-height: 1.15; }
-  .hero-sub { font-size: 16px; margin-bottom: 32px; }
-  .hero-badge { font-size: 10px; padding: 6px 14px; margin-bottom: 28px; }
-  .hero-actions { flex-direction: column; align-items: stretch; }
-  .btn-primary, .btn-secondary { text-align: center; padding: 14px 24px; font-size: 13px; }
-  .hero-scroll { display: none; }
-  .section-title { font-size: 28px; letter-spacing: -0.5px; }
-  .section-desc { font-size: 16px; }
-  .section-label { font-size: 11px; letter-spacing: 2px; }
-  .problem-grid { gap: 36px; }
-  .stat-item { padding: 20px 24px; }
-  .stat-number { font-size: 32px; }
-  .stat-label { font-size: 14px; }
-  .problem-quote { padding: 20px; }
-  .problem-quote p { font-size: 15px; }
-  .gap-cards { grid-template-columns: 1fr; max-width: 100%; }
-  .gap-card { padding: 28px 24px; }
-  .solution-desc-block { padding: 28px 20px; margin-bottom: 48px; }
-  .solution-desc-block p { font-size: 16px; }
-  .benefits-grid { grid-template-columns: 1fr; gap: 16px; }
-  .benefit-card { padding: 28px 24px; display: flex; flex-direction: column; align-items: center; }
-  .benefit-icon { font-size: 28px; margin-bottom: 12px; }
-  .benefit-card h4 { font-size: 18px; }
-  .market-grid { grid-template-columns: 1fr; gap: 16px; }
-  .market-row-2 { grid-template-columns: 1fr; gap: 16px; }
-  .market-card { padding: 32px 24px; }
-  .market-card .number { font-size: 36px; }
-  .why-grid { gap: 16px; }
-  .why-card { padding: 28px 24px; }
-  .why-card h4 { font-size: 18px; }
-  .why-card p { font-size: 14px; }
-  .why-card-number { font-size: 36px; top: 16px; right: 20px; }
-  .team-stats { flex-direction: column; gap: 24px; }
-  .team-stat .number { font-size: 36px; }
-  .expertise-tags { gap: 8px; }
-  .expertise-tag { padding: 8px 16px; font-size: 13px; }
-  .timeline { padding-left: 0; }
-  .timeline::before { left: 16px; }
-  .timeline-item { padding-left: 52px; padding-bottom: 40px; }
-  .timeline-dot { left: 6px; width: 22px; height: 22px; }
-  .timeline-title { font-size: 18px; }
-  .timeline-desc { font-size: 14px; }
-  .contact { padding: 64px 20px; }
-  .contact h2 { font-size: 28px; }
-  .contact-sub { font-size: 16px; margin-bottom: 32px; }
-  .contact-email { font-size: 15px; padding: 14px 24px; }
-  .contact-logo svg { height: 44px; }
-  footer { padding: 32px 20px; gap: 16px; }
-  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-  .container { max-width: 100%; }
-  .patent-badge .number { font-size: 48px; }
-  .market-breakdown { grid-template-columns: 1fr; }
-  .breakdown-item { padding: 20px; }
-  .breakdown-item .value { font-size: 26px; }
-  .breakdown-label { margin: 40px 0 16px; font-size: 11px; letter-spacing: 2px; }
-  .leader-card { padding: 24px; }
-  .leader-card h4 { font-size: 19px; }
-  .partners-block, .next-steps { padding: 24px 20px; margin-top: 40px; }
-  .card-list li { font-size: 13px; padding-left: 16px; }
-  .source-note { font-size: 12px; margin-top: 22px; }
+  .nav-links { display: none; position: absolute; top: var(--nav-h); left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: var(--navy); border-bottom: 1px solid var(--navy-line); padding: 8px 24px 22px; }
+  .nav-links.open { display: flex; }
+  .nav-links li a { padding: 14px 4px; font-size: 17px; border-bottom: 1px solid var(--navy-line); border-radius: 0; }
+  .nav-links a.active::after { display: none; }
+  .nav-links .nav-cta { margin: 16px 0 0; text-align: center; border-radius: 999px; border-bottom: 0; }
+  .site-nav.menu-open { background: var(--navy); }
+  .hero-grid { grid-template-columns: 1fr; }
+  .eye { max-width: 560px; margin: 8px auto 0; }
+  .head { grid-template-columns: 1fr; gap: 20px; margin-bottom: 48px; }
+  .notes, .team-more, .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+  .patent-list { grid-template-columns: 1fr; gap: 28px; }
+  .ptl { grid-template-columns: 1fr; gap: 22px; padding: 0 0 0 30px; border-left: 2px solid var(--navy-line); margin-left: 8px; }
+  .ptl-bar { display: none; }
+  .ptl-dot { top: 6px; left: -40px; }
+  .ptl-year { font-size: 30px; }
+  .cta { grid-template-columns: 1fr; }
+  .owners { display: none; }
+  .nodes { grid-template-columns: 1fr; border-left: 2px solid var(--ink); margin-left: 15px; }
+  .nodes::before { display: none; }
+  .nodes.nodes-3 { grid-template-columns: 1fr; }
+  .nodes.nodes-3::before { display: none; }
+  .node { padding: 0 0 30px 34px; }
+  .node .dot { position: absolute; left: -17px; top: 0; margin: 0; }
+  .node::after { content: attr(data-owner); display: block; font-size: 13px; font-weight: 600; color: var(--blue-ink); margin-top: 6px; }
+}
+@media (max-width: 640px) {
+  body { font-size: 17px; }
+  .wrap { padding: 0 22px; }
+  .section { padding: 84px 0; }
+  .hero { padding-bottom: 120px; }
+  .eye .label, .eye .leader { display: none; }
+  .figures, .steps4, .people { grid-template-columns: 1fr; gap: 32px; }
+  .progression, .mech, .dosing { padding: 24px 20px; border-radius: 20px; }
+  .swipe { display: block; }
+  .progression svg { min-width: 640px; }
+  .monograph-row h3 { font-size: 21px; overflow-wrap: anywhere; }
+  .monograph-row .strength { font-size: 24px; }
+  .role { flex-direction: column; gap: 8px; }
+}
+@media print {
+  .site-nav, .menu-toggle, .edge, .contact-mark { display: none; }
+  .hero { padding-top: 40px; }
+  .section { padding: 40px 0; break-inside: avoid; }
 }
 </style>
 </head>
 <body>
 
-<!-- ===== NAVIGATION ===== -->
-<nav id="navbar">
-  <a href="#" class="nav-logo">
-    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="20" cy="18" r="16" fill="white"/>
-      <circle cx="14" cy="16" r="10" fill="#0b1120"/>
-    </svg>
-    <span>Opcure</span>
-  </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#problem">Problem</a></li>
-    <li><a href="#solution">Solution</a></li>
-    <li><a href="#evidence">Evidence</a></li>
-    <li><a href="#market">Market</a></li>
-    <li><a href="#returns">Returns</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contact" class="nav-cta">Contact</a></li>
-  </ul>
-  <button class="menu-toggle" id="menuToggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="opcure-logo" viewBox="0 0 3359.5 813"><g fill="currentColor">
+      <path fill-rule="evenodd" d="M653.000 326.500C653.000 239.907 618.601 156.860 557.370 95.630C496.140 34.399 413.093 0.000 326.500 0.000C239.907 -0.000 156.860 34.399 95.630 95.630C34.399 156.860 0.000 239.907 0.000 326.500C-0.000 413.093 34.399 496.140 95.630 557.370C156.860 618.601 239.907 653.000 326.500 653.000C413.093 653.000 496.140 618.601 557.370 557.370C618.601 496.140 653.000 413.093 653.000 326.500ZM439.968 277.116C439.968 223.966 418.854 172.994 381.272 135.411C343.690 97.829 292.717 76.716 239.568 76.716C186.419 76.716 135.446 97.829 97.864 135.411C60.281 172.994 39.168 223.966 39.168 277.116C39.168 330.265 60.281 381.238 97.864 418.820C135.446 456.402 186.419 477.516 239.568 477.516C292.717 477.516 343.690 456.402 381.272 418.820C418.854 381.238 439.968 330.265 439.968 277.116Z"/>
+      <path d="M813.5 813.0H609.5L735.5 215.0H898.5L916.5 279.0H922.5Q958.5 241.0 1003.0 224.5Q1047.5 208.0 1090.5 208.0Q1125.5 208.0 1149.0 218.5Q1172.5 229.0 1186.5 247.0Q1200.5 265.0 1206.5 290.0Q1212.5 315.0 1212.5 343.0Q1212.5 357.0 1210.5 385.0Q1208.5 413.0 1201.5 447.5Q1194.5 482.0 1181.5 518.5Q1168.5 555.0 1147.0 585.0Q1125.5 615.0 1093.0 634.0Q1060.5 653.0 1015.5 653.0Q990.5 653.0 967.0 647.0Q943.5 641.0 924.5 631.0Q905.5 621.0 891.0 607.5Q876.5 594.0 869.5 580.0H863.5ZM919.5 556.0Q943.5 556.0 959.5 530.5Q975.5 505.0 985.5 470.5Q995.5 436.0 1000.0 401.5Q1004.5 367.0 1004.5 350.0Q1004.5 330.0 998.0 317.0Q991.5 304.0 974.5 304.0Q955.5 304.0 938.5 317.5Q921.5 331.0 913.5 341.0L874.5 524.0Q882.5 535.0 893.5 545.5Q904.5 556.0 919.5 556.0Z M1683.5 621.0Q1641.5 638.0 1595.0 645.5Q1548.5 653.0 1489.5 653.0Q1437.5 653.0 1394.0 642.5Q1350.5 632.0 1318.5 609.0Q1286.5 586.0 1268.5 549.5Q1250.5 513.0 1250.5 461.0Q1250.5 407.0 1269.0 360.5Q1287.5 314.0 1325.0 279.0Q1362.5 244.0 1420.5 224.0Q1478.5 204.0 1558.5 204.0Q1623.5 204.0 1671.5 214.5Q1719.5 225.0 1750.5 262.0L1722.5 390.0H1586.5Q1587.5 373.0 1588.5 360.0Q1589.5 347.0 1589.5 331.0Q1589.5 299.0 1582.5 285.5Q1575.5 272.0 1559.5 272.0Q1531.5 272.0 1510.5 299.5Q1489.5 327.0 1476.0 365.5Q1462.5 404.0 1456.0 446.5Q1449.5 489.0 1449.5 519.0Q1449.5 530.0 1450.5 541.5Q1451.5 553.0 1455.0 563.0Q1458.5 573.0 1464.5 579.0Q1470.5 585.0 1481.5 585.0Q1491.5 585.0 1504.5 579.0Q1517.5 573.0 1529.5 560.5Q1541.5 548.0 1552.5 528.0Q1563.5 508.0 1569.5 480.0H1712.5Z M2133.5 215.0H2337.5L2245.5 645.0H2083.5L2065.5 581.0H2059.5Q2033.5 612.0 1989.0 632.5Q1944.5 653.0 1899.5 653.0Q1839.5 653.0 1805.5 622.5Q1771.5 592.0 1771.5 543.0Q1771.5 518.0 1780.0 480.5Q1788.5 443.0 1795.5 410.0L1837.5 215.0H2040.5L1990.5 449.0Q1988.5 457.0 1986.5 468.0Q1984.5 479.0 1982.5 489.5Q1980.5 500.0 1979.0 509.5Q1977.5 519.0 1977.5 525.0Q1977.5 540.0 1984.0 550.5Q1990.5 561.0 2007.5 561.0Q2025.5 561.0 2041.5 549.0Q2057.5 537.0 2066.5 526.0Z M2426.5 215.0H2589.5L2604.5 290.0H2611.5Q2634.5 254.0 2670.5 229.0Q2706.5 204.0 2765.5 204.0Q2769.5 204.0 2778.0 204.5Q2786.5 205.0 2797.0 207.5Q2807.5 210.0 2819.0 214.5Q2830.5 219.0 2841.5 227.0L2797.5 433.0H2688.5Q2686.5 371.0 2677.5 346.5Q2668.5 322.0 2648.5 322.0Q2638.5 322.0 2627.0 326.5Q2615.5 331.0 2603.5 346.0L2539.5 645.0H2335.5Z M3046.5 444.0Q3042.5 466.0 3041.0 486.0Q3039.5 506.0 3039.5 522.0Q3039.5 531.0 3040.5 542.0Q3041.5 553.0 3045.0 562.5Q3048.5 572.0 3055.0 578.5Q3061.5 585.0 3073.5 585.0Q3082.5 585.0 3094.0 579.0Q3105.5 573.0 3117.0 562.0Q3128.5 551.0 3139.0 535.0Q3149.5 519.0 3155.5 499.0H3319.5L3293.5 606.0Q3273.5 619.0 3247.5 628.0Q3221.5 637.0 3192.5 642.5Q3163.5 648.0 3133.5 650.5Q3103.5 653.0 3076.5 653.0Q3026.5 653.0 2983.5 644.0Q2940.5 635.0 2908.5 613.0Q2876.5 591.0 2858.0 554.5Q2839.5 518.0 2839.5 464.0Q2839.5 415.0 2855.0 368.0Q2870.5 321.0 2907.0 284.5Q2943.5 248.0 3005.0 226.0Q3066.5 204.0 3158.5 204.0Q3258.5 204.0 3309.0 235.0Q3359.5 266.0 3359.5 332.0Q3359.5 359.0 3351.5 390.5Q3343.5 422.0 3327.5 444.0ZM3179.5 325.0Q3179.5 294.0 3169.5 283.0Q3159.5 272.0 3145.5 272.0Q3129.5 272.0 3116.0 282.5Q3102.5 293.0 3091.5 310.5Q3080.5 328.0 3071.5 350.5Q3062.5 373.0 3056.5 398.0H3170.5Q3172.5 386.0 3174.5 373.0Q3176.5 362.0 3178.0 349.0Q3179.5 336.0 3179.5 325.0Z"/>
+    </g></symbol>
+    <symbol id="opcure-mark" viewBox="0 0 653 653"><g fill="currentColor">
+      <path fill-rule="evenodd" d="M653.000 326.500C653.000 239.907 618.601 156.860 557.370 95.630C496.140 34.399 413.093 0.000 326.500 0.000C239.907 -0.000 156.860 34.399 95.630 95.630C34.399 156.860 0.000 239.907 0.000 326.500C-0.000 413.093 34.399 496.140 95.630 557.370C156.860 618.601 239.907 653.000 326.500 653.000C413.093 653.000 496.140 618.601 557.370 557.370C618.601 496.140 653.000 413.093 653.000 326.500ZM439.968 277.116C439.968 223.966 418.854 172.994 381.272 135.411C343.690 97.829 292.717 76.716 239.568 76.716C186.419 76.716 135.446 97.829 97.864 135.411C60.281 172.994 39.168 223.966 39.168 277.116C39.168 330.265 60.281 381.238 97.864 418.820C135.446 456.402 186.419 477.516 239.568 477.516C292.717 477.516 343.690 456.402 381.272 418.820C418.854 381.238 439.968 330.265 439.968 277.116Z"/>
+    </g></symbol>
+    <symbol id="drop" viewBox="0 0 34 44"><path d="M17 2C17 2 3 18.5 3 28a14 14 0 0 0 28 0C31 18.5 17 2 17 2Z" fill="currentColor"/><path d="M11 29a6 6 0 0 0 4 6" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="tick" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.3l2.6 2.6L14 7.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
 
-<!-- ===== HERO ===== -->
-<section class="hero" id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="hero-badge">
-      First-in-Class Zinc-Replacement Cataract Therapy
-    </div>
-    <h1>A patented topical eye drop to treat cataracts <em>without surgery</em></h1>
-    <p class="hero-sub">94 million people live with cataract-related vision impairment, and no non-surgical pharmacological therapy has been approved. Opcure is advancing a pivotal Phase III RCT toward a global licensing partnership — target 2028.</p>
-    <div class="hero-actions">
-      <a href="#solution" class="btn-primary">Discover Opcure</a>
-      <a href="#contact" class="btn-secondary">Get in Touch</a>
-    </div>
-  </div>
-  <div class="hero-scroll">
-    <div class="hero-scroll-line"></div>
-    Scroll
-  </div>
-</section>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<!-- ===== THE PROBLEM ===== -->
-<section class="problem" id="problem">
-  <div class="container">
-    <div class="problem-grid">
-      <div class="problem-text">
-        <div class="section-label reveal">The Problem</div>
-        <h2 class="section-title reveal reveal-delay-1">Cataracts Remain the<br>#1 Cause of Global Blindness</h2>
-        <p class="section-desc reveal reveal-delay-2">Cataracts are the leading cause of blindness worldwide, affecting 94 million people with vision impairment. The only approved treatment is surgery — an intervention that is invasive, infrastructure-dependent, and inaccessible in much of the world.</p>
-        <div class="problem-quote reveal reveal-delay-3">
-          <p>The U.S. FDA has not approved any non-surgical pharmacological therapy to prevent, delay, or reverse cataracts.</p>
-        </div>
-        <p class="source-note reveal reveal-delay-4">Sources: Nature Eye 2024; WHO/IAPB Vision Atlas 2024; FDA Orange Book (April 2026).</p>
-      </div>
-      <div class="problem-stats">
-        <div class="stat-item reveal reveal-delay-1">
-          <div class="stat-number" data-target="94" data-suffix="M">0</div>
-          <div class="stat-label">People globally with cataract-related vision impairment</div>
-        </div>
-        <div class="stat-item reveal reveal-delay-2">
-          <div class="stat-number" data-target="17" data-suffix="M">0</div>
-          <div class="stat-label">Bilaterally blind from cataracts — 35% of all blindness</div>
-        </div>
-        <div class="stat-item reveal reveal-delay-3">
-          <div class="stat-number" data-target="30" data-suffix="M+">0</div>
-          <div class="stat-label">Cataract surgeries performed annually — and still a massive access gap</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CURRENT SOLUTION GAP ===== -->
-<section class="current-solution">
-  <div class="container">
-    <div class="section-label reveal">The Gap</div>
-    <h2 class="section-title reveal reveal-delay-1">No Approved Alternative to Surgery</h2>
-    <p class="section-desc reveal reveal-delay-2">Despite the enormous global burden, cataract patients today face a stark reality.</p>
-    <div class="gap-cards">
-      <div class="gap-card reveal reveal-delay-2">
-        <div class="gap-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
-        </div>
-        <h4>Surgery Only</h4>
-        <p>The single approved treatment is an invasive, infrastructure-dependent surgical intervention.</p>
-      </div>
-      <div class="gap-card reveal reveal-delay-3">
-        <div class="gap-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="10"/></svg>
-        </div>
-        <h4>Access Gap</h4>
-        <p>More than 30 million surgeries are performed each year, yet the procedure remains inaccessible across much of the world.</p>
-      </div>
-      <div class="gap-card reveal reveal-delay-4">
-        <div class="gap-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <h4>No Approved Drug</h4>
-        <p>The U.S. FDA has approved no pharmacological therapy to prevent, delay, or reverse cataracts.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- ===== OUR SOLUTION ===== -->
-<section class="solution" id="solution">
-  <div class="container">
-    <div class="solution-header">
-      <div class="section-label reveal">Our Solution</div>
-      <h2 class="section-title reveal reveal-delay-1">A Patented Topical Therapy<br>with a Dual Mechanism of Action</h2>
-    </div>
-
-    <div class="solution-desc-block reveal reveal-delay-2">
-      <p><strong>Zinc Sulfate 0.30%</strong> — therapeutic active, within the Japanese Pharmacopoeia range of 0.27–0.33%. <strong>Chlorpheniramine Maleate 0.06%</strong> — antihistamine, improves tolerability. <strong>Carboxymethyl Cellulose 0.50%</strong> — lubricant and viscosity agent.<br><br>Dosage: 2 drops, four times daily (Q6H). Self-administered and room-temperature stable.</p>
-    </div>
-
-    <div class="benefits-grid">
-      <div class="benefit-card reveal reveal-delay-1">
-        <span class="benefit-icon">🧬</span>
-        <h4>Restores SOD1 Activity</h4>
-        <p>Zinc re-metallates Cu/Zn-SOD (SOD1), reactivating lens antioxidant defenses that neutralize the reactive oxygen species driving cataract formation.</p>
-        <span class="benefit-highlight">Mechanism 1</span>
-      </div>
-      <div class="benefit-card reveal reveal-delay-2">
-        <span class="benefit-icon">⚗️</span>
-        <h4>Saturates Zinc Reservoirs</h4>
-        <p>Exogenous Zn²⁺ re-saturates metallothionein to the fully loaded Zn7 form, restoring the zinc buffer and breaking the oxidative-stress feedback loop.</p>
-        <span class="benefit-highlight">Mechanism 2</span>
-      </div>
-      <div class="benefit-card reveal reveal-delay-3">
-        <span class="benefit-icon">🛡️</span>
-        <h4>Established Safety</h4>
-        <p>All actives sit within international pharmacopoeia limits, with an established safety profile and no new-ingredient CMC risk.</p>
-        <span class="benefit-highlight">No new-ingredient risk</span>
-      </div>
-      <div class="benefit-card reveal reveal-delay-4">
-        <span class="benefit-icon">💧</span>
-        <h4>Simple Administration</h4>
-        <p>Self-administered eye drops, room-temperature stable, with no surgical intervention or specialist infrastructure required.</p>
-        <span class="benefit-highlight">2 drops · 4× daily</span>
-      </div>
-    </div>
-
-    <p class="source-note source-note-centered reveal">Mechanism supported by pre-clinical work (Abdul-Hussein 2014, Barman 2018, Heruye 2020) and observational data in 230 volunteers (90% positive response; no serious adverse events).</p>
-  </div>
-</section>
-
-<!-- ===== EVIDENCE BASE ===== -->
-<section class="current-solution" id="evidence">
-  <div class="container">
-    <div class="section-label reveal">Evidence Base</div>
-    <h2 class="section-title reveal reveal-delay-1">Three Converging Lines of Evidence</h2>
-    <p class="section-desc reveal reveal-delay-2">Pre-clinical models, observational data, and a granted patent portfolio built on established actives.</p>
-    <div class="gap-cards">
-      <div class="gap-card reveal reveal-delay-2">
-        <div class="gap-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M9 2v6l-5 9a2 2 0 001.7 3h12.6a2 2 0 001.7-3l-5-9V2"/><path d="M7 2h10"/></svg>
-        </div>
-        <h4>Pre-clinical</h4>
-        <ul class="card-list">
-          <li>67% reduction in cataract severity in a selenite-induced rabbit model (Abdul-Hussein 2014, p&lt;0.01)</li>
-          <li>83% decrease in lipid peroxidation; 140% increase in glutathione</li>
-          <li>Attenuated diabetic cataract progression in a rat model (Barman 2018)</li>
-        </ul>
-      </div>
-      <div class="gap-card reveal reveal-delay-3">
-        <div class="gap-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 16v-5M12 16V8M17 16v-9"/></svg>
-        </div>
-        <h4>Observational</h4>
-        <ul class="card-list">
-          <li>~90% positive response across 230 volunteers</li>
-          <li>91.4% estimated effectiveness in 175 cataract-specific cases (corrected count and conservative recount; 93.6% of 171 as printed in the granted patent)</li>
-          <li>No serious adverse events; only transient mild stinging</li>
-          <li>Caveat: uncontrolled data — the RCT is designed to provide rigorous evidence</li>
-        </ul>
-      </div>
-      <div class="gap-card reveal reveal-delay-4">
-        <div class="gap-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-        </div>
-        <h4>IP &amp; Safety</h4>
-        <ul class="card-list">
-          <li>US Patent 11,433,096 granted (Sep 2022); China granted; PCT pending in the EU, Canada and India</li>
-          <li>All actives within international pharmacopoeia limits</li>
-          <li>Established safety profile; no new-ingredient CMC risk</li>
-        </ul>
-      </div>
-    </div>
-    <p class="source-note source-note-centered reveal">The 100-eye Phase III RCT — six-month treatment with efficacy follow-up to Month 12, double-blind and placebo-controlled, at an Egypt site — is designed to convert observational signal into rigorous controlled evidence.</p>
-  </div>
-</section>
-
-<!-- ===== MARKET ===== -->
-<section class="market" id="market">
-  <div class="container">
-    <div class="market-header">
-      <div class="section-label reveal">Market Opportunity</div>
-      <h2 class="section-title reveal reveal-delay-1">218.5M Patients. 30M Surgeries<br>a Year. No Approved Drug.</h2>
-      <p class="section-desc reveal reveal-delay-2">The cataract treatment market is one of the largest opportunities in ophthalmology — and Opcure's patent portfolio covers the majority of it.</p>
-    </div>
-
-    <div class="market-grid reveal reveal-delay-2">
-      <div class="market-card">
-        <div class="number">$7.1–9.2<span class="number-suffix">B</span></div>
-        <div class="label">Global cataract treatment market (2024), across four independent estimates</div>
-      </div>
-      <div class="market-card">
-        <div class="number">$4.9<span class="number-suffix">B</span></div>
-        <div class="label">Peak annual Rx net sales (Y10), adherence-adjusted; $28.4B cumulative</div>
-      </div>
-      <div class="market-card">
-        <div class="number">218.5<span class="number-suffix">M</span></div>
-        <div class="label">Prevalent cataract population across modeled markets</div>
-      </div>
-    </div>
-
-    <div class="market-row-2 reveal reveal-delay-3">
-      <div class="market-card">
-        <div class="number">5<span class="number-suffix"> markets</span></div>
-        <div class="label">Patent portfolio geography: US, China, EU, Canada and India</div>
-      </div>
-      <div class="market-card">
-        <div class="number">~75<span class="number-suffix">%</span></div>
-        <div class="label">Of the global cataract market covered by granted and pending patents</div>
-      </div>
-    </div>
-
-    <div class="breakdown-label reveal reveal-delay-3">Where the Value Sits</div>
-    <div class="market-breakdown reveal reveal-delay-4">
-      <div class="breakdown-item">
-        <div class="region">USA</div>
-        <div class="value">28.0M</div>
-        <div class="src">NEI 2025</div>
-      </div>
-      <div class="breakdown-item">
-        <div class="region">EU-27 + UK</div>
-        <div class="value">35.0M</div>
-        <div class="src">GBD 2021 + Eurostat</div>
-      </div>
-      <div class="breakdown-item">
-        <div class="region">China</div>
-        <div class="value">50.0M</div>
-        <div class="src">GBD 2021 + Taizhou</div>
-      </div>
-      <div class="breakdown-item">
-        <div class="region">India</div>
-        <div class="value">42.0M</div>
-        <div class="src">LASI Wave-1 2024</div>
-      </div>
-      <div class="breakdown-item">
-        <div class="region">Canada</div>
-        <div class="value">3.5M</div>
-        <div class="src">StatCan + NEI prevalence</div>
-      </div>
-      <div class="breakdown-item">
-        <div class="region">Rest of World</div>
-        <div class="value">60.0M</div>
-        <div class="src">Aggregate proxy</div>
-      </div>
-    </div>
-
-    <p class="source-note source-note-centered reveal">Prevalent cataract population across modeled markets: 218.5M. Peak Rx royalty to Opcure (Y10, adherence-adjusted, gross of patent expiry): $234M. Market size 2024: Grand View $7.13B, Meta Tech $8.85B, MRFR $9.10B, IMARC $9.2B. Patient and royalty figures: Opcure model. Management projections — see the disclaimer below.</p>
-  </div>
-</section>
-
-<!-- ===== PATH TO RETURN ===== -->
-<section class="why-opcure" id="returns">
-  <div class="container">
-    <div class="section-label reveal">Path to Return</div>
-    <h2 class="section-title reveal reveal-delay-1">Asset-Light Licensing Exit</h2>
-    <p class="section-desc reveal reveal-delay-2">Royalty income to equity holders, benchmarked against comparable topical-ophthalmic in-licensing transactions.</p>
-
-    <div class="why-grid">
-      <div class="why-card reveal reveal-delay-1">
-        <div class="why-card-number">01</div>
-        <h4>Upfront ~$5M</h4>
-        <p>Received on signing with the licensee, targeted for 2028.</p>
-      </div>
-      <div class="why-card reveal reveal-delay-2">
-        <div class="why-card-number">02</div>
-        <h4>Development Milestones ~$15M</h4>
-        <p>Aggregate milestone payments across the 2028–2030 development period.</p>
-      </div>
-      <div class="why-card reveal reveal-delay-3">
-        <div class="why-card-number">03</div>
-        <h4>Launch Milestone ~$10M</h4>
-        <p>Triggered at first commercial sale of the licensed product.</p>
-      </div>
-      <div class="why-card reveal reveal-delay-4">
-        <div class="why-card-number">04</div>
-        <h4>Royalty Stream</h4>
-        <p>$234M at peak (Y1–Y10, 5% across patent markets), with $1.34B cumulative over the royalty period.</p>
-      </div>
-      <div class="why-card reveal reveal-delay-5" style="grid-column: 1 / -1;">
-        <div class="why-card-number">05</div>
-        <h4>Key Assumptions &amp; Risk</h4>
-        <p>Cumulative probability of success to launch: approximately 19.8%. Discount rate: 20% pre-license and 12% post-license. All figures are management projections based on the assumptions stated in the investor brief — they are estimates, not guarantees.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== TEAM ===== -->
-<section class="team" id="team">
-  <div class="container">
-    <div class="team-header">
-      <div class="section-label reveal">Team &amp; Partners</div>
-      <h2 class="section-title reveal reveal-delay-1">Ten Members. Three Continents.<br>Scientific and Commercial Depth.</h2>
-    </div>
-
-    <div class="team-stats reveal reveal-delay-2">
-      <div class="team-stat">
-        <div class="number">10</div>
-        <div class="label">Team Members</div>
-      </div>
-      <div class="team-stat">
-        <div class="number">3</div>
-        <div class="label">Continents</div>
-      </div>
-      <div class="team-stat">
-        <div class="number">2</div>
-        <div class="label">Co-Founders &amp; Inventors</div>
-      </div>
-    </div>
-
-    <div class="leadership-grid">
-      <div class="leader-card reveal reveal-delay-2">
-        <h4>Dr. Sherif AlQallawi</h4>
-        <div class="role">Co-Founder &amp; CEO</div>
-        <p>BSc Pharmaceutical Sciences (Alexandria). PhD Organizational Psychology (Florida Tech). Leads strategy, investor relations and clinical development.</p>
-      </div>
-      <div class="leader-card reveal reveal-delay-3">
-        <h4>Mr. Abdelhamid AlQallawi</h4>
-        <div class="role">Co-Founder &amp; Inventor</div>
-        <p>BSc Pharmaceutical Sciences (Alexandria, 1979). More than 40 years as a community pharmacist and a pioneer in extemporaneous ophthalmic preparations.</p>
-      </div>
-    </div>
-
-    <div class="expertise-tags reveal reveal-delay-3">
-      <span class="expertise-tag">Pharmaceutical Sciences</span>
-      <span class="expertise-tag">Ophthalmology</span>
-      <span class="expertise-tag">Management Consulting</span>
-      <span class="expertise-tag">Clinical Research / Medical Affairs</span>
-      <span class="expertise-tag">Business Analytics</span>
-      <span class="expertise-tag">Business Development</span>
-    </div>
-
-    <div class="partners-block reveal reveal-delay-4">
-      <h4>Partners &amp; Licensing Targets</h4>
-      <ul class="card-list">
-        <li>London-based clinical research firm — protocol and CRO for the Egypt trial</li>
-        <li>Egyptian pharmaceutical company — in discussions as industry study sponsor</li>
-        <li>Licensing targets: the three global ophthalmology leaders holding both a surgical and an ophthalmic pharmaceutical franchise</li>
+<header class="site-nav" id="siteNav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Opcure, back to top"><svg viewBox="0 0 3359.5 813" aria-hidden="true"><use href="#opcure-logo"/></svg></a>
+    <nav aria-label="Main">
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#problem">The problem</a></li>
+        <li><a href="#approach">How it works</a></li>
+        <li><a href="#patents">Patents</a></li>
+        <li><a href="#path">Path forward</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
-    </div>
+    </nav>
   </div>
-</section>
+  <div class="progress" id="progress"></div>
+</header>
 
-<div class="section-divider"></div>
+<main id="main">
 
-<!-- ===== ROADMAP ===== -->
-<section class="roadmap" id="roadmap">
-  <div class="container">
-    <div class="roadmap-header">
-      <div class="section-label reveal">Timeline</div>
-      <h2 class="section-title reveal reveal-delay-1">A 9–12 Month Path to the<br>Value-Inflection Point</h2>
-      <p class="section-desc reveal reveal-delay-2">A clear, milestone-driven path from financing to a definitive licensing agreement.</p>
-    </div>
-
-    <div class="timeline">
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">Q4 2026</div>
-        <div class="timeline-title">Close Financing &amp; Form LLC</div>
-        <ul class="card-list">
-          <li>Close the round</li>
-          <li>Assign patents to the LLC</li>
-          <li>CRO contract executed</li>
-        </ul>
+<!-- ========== HERO ========== -->
+<section class="hero dark" id="top" aria-labelledby="hero-title">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <h1 id="hero-title">A topical eye drop designed to slow <span class="nowrap">age-related</span> cataract</h1>
+        <p class="lead">Patented in the US and China. Built on established ophthalmic ingredients. Preparing for its first studies in patients.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#approach">See how it works</a>
+          <a class="btn btn-ghost" href="#contact">Contact us</a>
+        </div>
+        <p class="status-note">Investigational product, not approved by any regulatory authority.</p>
       </div>
-      <div class="timeline-item reveal reveal-delay-1">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">Q1 2027</div>
-        <div class="timeline-title">Begin RCT Enrollment</div>
-        <ul class="card-list">
-          <li>100 eyes, double-blind</li>
-          <li>1:1 randomization</li>
-          <li>Egypt site, London-based CRO</li>
-        </ul>
-      </div>
-      <div class="timeline-item reveal reveal-delay-2">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">Q2 2027</div>
-        <div class="timeline-title">RCT Readout</div>
-        <ul class="card-list">
-          <li>BCDVA primary endpoint</li>
-          <li>Secondary LOCS III; VFQ-25 exploratory</li>
-          <li>Topline data assembled</li>
-        </ul>
-      </div>
-      <div class="timeline-item reveal reveal-delay-3">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">H2 2027</div>
-        <div class="timeline-title">Licensing Outreach</div>
-        <ul class="card-list">
-          <li>10–15 targeted licensees</li>
-          <li>Teaser and CDA leading to data room</li>
-          <li>Term-sheet phase in Q4 2027</li>
-        </ul>
-      </div>
-      <div class="timeline-item reveal reveal-delay-4">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2028</div>
-        <div class="timeline-title">Definitive Agreement</div>
-        <ul class="card-list">
-          <li>Licensing deal signed</li>
-          <li>Upfront payment received</li>
-          <li>Transition to milestones and royalties</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CONTACT ===== -->
-<section class="contact" id="contact">
-  <div class="contact-content">
-    <div class="contact-logo reveal">
-      <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="25" cy="22" r="20" fill="white"/>
-        <circle cx="17" cy="20" r="12.5" fill="#0b1120"/>
+      <svg class="eye" viewBox="0 0 620 460" role="img" aria-labelledby="eyeTitle">
+        <title id="eyeTitle">Cross-section of the eye: light passes through the cornea and lens to the retina. A drop on the eye's surface is designed to supply zinc to the lens.</title>
+        <defs>
+          <radialGradient id="lensFill" cx="40%" cy="40%" r="70%"><stop offset="0" stop-color="#e3edf8" stop-opacity=".30"/><stop offset="1" stop-color="#8fb3d9" stop-opacity=".06"/></radialGradient>
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <!-- light rays converging on the retina -->
+        <path class="ray r1" d="M0 200 L151 200 L228 206 L540 230"/>
+        <path class="ray r2" d="M0 215 L149 215 L227 218 L540 230"/>
+        <path class="ray r3" d="M0 230 L540 230"/>
+        <path class="ray r4" d="M0 245 L149 245 L227 242 L540 230"/>
+        <path class="ray r5" d="M0 260 L151 260 L228 254 L540 230"/>
+        <!-- globe, cornea, retina, optic nerve -->
+        <path class="wall draw" d="M226 122 A180 180 0 1 1 226 338"/>
+        <path class="wall draw" d="M226 122 C176 146 148 190 148 230 C148 270 176 314 226 338"/>
+        <path class="wall draw" d="M455 83 A170 170 0 0 1 455 377" opacity=".5"/>
+        <path class="wall draw" d="M548 244 L604 250 M548 216 L604 210" opacity=".6"/>
+        <!-- iris -->
+        <path class="iris" d="M213 140 L213 192 M213 268 L213 320"/>
+        <!-- lens -->
+        <path class="lens-body" d="M250 156 C230 175 226 205 226 230 C226 255 230 285 250 304 C278 285 288 255 288 230 C288 205 278 175 250 156 Z"/>
+        <path class="epi" d="M250 156 C230 175 226 205 226 230 C226 255 230 285 250 304"/>
+        <!-- drop, ripple and zinc ions -->
+        <path class="drop" d="M176 96c0 0-9 11-9 17a9 9 0 0 0 18 0c0-6-9-17-9-17Z"/>
+        <ellipse class="ripple" cx="174" cy="140" rx="12" ry="5"/>
+        <g>
+          <circle class="ion" cx="236" cy="184" r="3.6" style="--dx:-62px;--dy:-30px"/>
+          <circle class="ion" cx="230" cy="205" r="3.6" style="--dx:-66px;--dy:-48px"/>
+          <circle class="ion" cx="228" cy="228" r="3.6" style="--dx:-70px;--dy:-64px"/>
+          <circle class="ion" cx="228" cy="252" r="3.6" style="--dx:-70px;--dy:-84px"/>
+          <circle class="ion" cx="231" cy="273" r="3.6" style="--dx:-66px;--dy:-104px"/>
+          <circle class="ion" cx="238" cy="292" r="3.6" style="--dx:-60px;--dy:-122px"/>
+        </g>
+        <!-- labels -->
+        <path class="leader" d="M150 168 L96 128"/>
+        <text class="label" x="40" y="122">Cornea</text>
+        <path class="leader" d="M268 300 L292 388"/>
+        <text class="label" x="298" y="404">Lens</text>
+        <path class="leader" d="M528 300 L560 388"/>
+        <text class="label" x="530" y="404">Retina</text>
       </svg>
     </div>
-    <h2 class="reveal reveal-delay-1">Let's Start the<br><em>Conversation</em></h2>
-    <p class="contact-sub reveal reveal-delay-2">Patents are published: US 11,433,096 and PCT WO 2022/009161. Financial model, clinical protocol and detailed deck available under CDA.</p>
-    <a href="mailto:team@opcure.net" class="contact-email reveal reveal-delay-3">
-      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
-      team@opcure.net
-    </a>
+    <dl class="hero-facts">
+      <div><dt>Granted patents</dt><dd>United States and China</dd></div>
+      <div><dt>Stage</dt><dd>Preparing for clinical studies</dd></div>
+      <div><dt>Business model</dt><dd>Global licensing</dd></div>
+    </dl>
+  </div>
+  <svg class="edge edge-bottom" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true" style="color: var(--paper)"><path d="M0 100 L0 0 Q720 100 1440 0 L1440 100 Z"/></svg>
+</section>
 
-    <div class="next-steps reveal reveal-delay-4">
-      <h4>Next Steps</h4>
-      <ul class="card-list">
-        <li>A 30-minute intro call to review the opportunity and clinical plan</li>
-        <li>Execute a mutual CDA for the financial model, clinical protocol and detailed deck</li>
-        <li>Targeted close: Q4 2026, to fund RCT enrollment</li>
-      </ul>
+<!-- ========== PROBLEM ========== -->
+<section class="section paper" id="problem" aria-labelledby="problem-title">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="problem-title">Surgery is still the only established treatment</h2>
+      <p class="lead">Cataract is the leading cause of blindness worldwide. Surgery works well where people can reach it, but it depends on operating rooms, surgeons and follow-up care, and access varies widely between countries.</p>
+    </div>
+    <div class="figures">
+      <div><div class="figure-num">100M</div><p>people with moderate to severe vision loss or blindness from cataract</p></div>
+      <div><div class="figure-num accent">17M</div><span class="share" role="img" aria-label="About 40% of all blindness"><i></i></span><p>of them blind from cataract, about 40% of all blindness</p></div>
+      <div><div class="figure-num">20M+</div><p>cataract operations a year, yet surgery rates vary over 100-fold between countries</p></div>
+      <div><div class="figure-num">0</div><p>FDA-approved drugs to prevent, slow or reverse cataract</p></div>
+    </div>
+
+    <figure class="progression">
+      <p class="swipe" aria-hidden="true">Swipe to see the full figure</p>
+      <div class="fig-scroll"><svg viewBox="0 0 1000 320" role="img" aria-labelledby="progTitle">
+        <title id="progTitle">Age-related cataract: the lens clouds over years, from clear to early, moderate and advanced. The drop aims to act in early and moderate cataract by slowing progression. Today, cataract that limits vision is treated by surgery that replaces the lens.</title>
+        <defs>
+          <filter id="haze" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" seed="7" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0.85  0 0 0 0 0.62  0 0 0 0 0.25  0 0 0 1.4 -0.35" result="c"/><feComposite in="c" in2="SourceGraphic" operator="in"/></filter>
+          <radialGradient id="lClear" cx="38%" cy="35%" r="75%"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d3e3f3"/></radialGradient>
+          <radialGradient id="lEarly" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#e8c98f"/><stop offset=".55" stop-color="#e6ebee"/><stop offset="1" stop-color="#d3e1ee"/></radialGradient>
+          <radialGradient id="lMod" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#d4a04c"/><stop offset=".6" stop-color="#e2cfa8"/><stop offset="1" stop-color="#d9dcdc"/></radialGradient>
+          <radialGradient id="lAdv" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#9b6218"/><stop offset=".6" stop-color="#c2893a"/><stop offset="1" stop-color="#d7b27a"/></radialGradient>
+          <radialGradient id="shine" cx="35%" cy="30%" r="40%"><stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+          <clipPath id="c1"><circle cx="120" cy="170" r="70"/></clipPath>
+          <clipPath id="c2"><circle cx="370" cy="170" r="70"/></clipPath>
+          <clipPath id="c3"><circle cx="620" cy="170" r="70"/></clipPath>
+          <clipPath id="c4"><circle cx="870" cy="170" r="70"/></clipPath>
+        </defs>
+        <!-- target bracket over early and moderate -->
+        <path d="M300 62 V48 H690 V62" fill="none" stroke="#37699b" stroke-width="2"/>
+        <text x="495" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#2c5781">Where the drop aims to act: slowing progression</text>
+        <path d="M805 62 V48 H935 V62" fill="none" stroke="#8a5a12" stroke-width="2"/>
+        <text x="870" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#8a5a12">Today: surgery</text>
+        <!-- lenses -->
+        <g><circle cx="120" cy="170" r="70" fill="url(#lClear)"/><circle cx="120" cy="170" r="70" fill="url(#shine)"/><circle cx="120" cy="170" r="70" fill="none" stroke="#b5c6d9" stroke-width="1.5"/></g>
+        <g><circle cx="370" cy="170" r="70" fill="url(#lEarly)"/><rect x="300" y="100" width="140" height="140" filter="url(#haze)" clip-path="url(#c2)" opacity=".25"/><circle cx="370" cy="170" r="70" fill="url(#shine)" opacity=".7"/><circle cx="370" cy="170" r="70" fill="none" stroke="#b5c6d9" stroke-width="1.5"/></g>
+        <g><circle cx="620" cy="170" r="70" fill="url(#lMod)"/><rect x="550" y="100" width="140" height="140" filter="url(#haze)" clip-path="url(#c3)" opacity=".5"/><circle cx="620" cy="170" r="70" fill="url(#shine)" opacity=".45"/><circle cx="620" cy="170" r="70" fill="none" stroke="#b5c6d9" stroke-width="1.5"/></g>
+        <g><circle cx="870" cy="170" r="70" fill="url(#lAdv)"/><rect x="800" y="100" width="140" height="140" filter="url(#haze)" clip-path="url(#c4)" opacity=".8"/><circle cx="870" cy="170" r="70" fill="url(#shine)" opacity=".2"/><circle cx="870" cy="170" r="70" fill="none" stroke="#b5c6d9" stroke-width="1.5"/></g>
+        <!-- stage names -->
+        <g font-size="16" font-weight="600" fill="#0e1730" text-anchor="middle">
+          <text x="120" y="266">Clear lens</text><text x="370" y="266">Early</text><text x="620" y="266">Moderate</text><text x="870" y="266">Advanced</text>
+        </g>
+        <!-- time axis -->
+        <path d="M60 296 H940" stroke="#5b697c" stroke-width="1.5"/><path d="M932 290 L942 296 L932 302" fill="none" stroke="#5b697c" stroke-width="1.5"/>
+        <text x="60" y="316" font-size="13" fill="#5b697c">Lens clouding progresses over years</text>
+      </svg></div>
+      <figcaption>Illustration of age-related cataract seen face-on. Whether established opacity can regress is an open question our studies are designed to detect.</figcaption>
+    </figure>
+
+    <div class="notes">
+      <div class="note-sa">
+        <h3>In Saudi Arabia</h3>
+        <p>Across Saudi population surveys from 1986 to 2015, cataract was the leading single cause of blindness, accounting for 41% to 59% of it: roughly twice its 20% to 25% share in high-income countries.</p>
+      </div>
+    </div>
+    <p class="sources">Sources: Eye 2024 (Vision Loss Expert Group, 2020 estimates, all ages); Eye 2025 (O'Brart); Lancet Global Health Commission on Global Eye Health 2021; FDA Orange Book (April 2026); Al-Ghamdi, Saudi J Ophthalmol 2019.</p>
+  </div>
+</section>
+
+<!-- ========== HOW IT WORKS ========== -->
+<section class="section" id="approach" aria-labelledby="approach-title">
+  <svg class="edge edge-top edge-sm" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true" style="color: var(--paper)"><path d="M0 0 L1440 0 L1440 100 Q720 0 0 100 Z"/></svg>
+  <div class="wrap">
+    <div class="head">
+      <h2 id="approach-title">An eye drop built on established ingredients</h2>
+      <p class="lead">A patented combination of ingredients with long records in medicine, in a drop that patients apply themselves.</p>
+    </div>
+    <div class="approach-grid">
+      <div>
+        <div class="monograph" role="table" aria-label="Formulation">
+          <div class="monograph-row" role="row">
+            <h3 role="rowheader">Zinc sulfate</h3><span class="strength" role="cell">0.30%</span>
+            <div class="role" role="cell"><b>Active ingredient</b><span>The only ophthalmic astringent in the FDA over-the-counter monograph, marketed in eye drops for decades.</span></div>
+          </div>
+          <div class="monograph-row" role="row">
+            <h3 role="rowheader">Chlorpheniramine maleate</h3><span class="strength" role="cell"></span>
+            <div class="role" role="cell"><b>Comfort</b><span>An antihistamine with decades of oral over-the-counter use, included to make the drop more comfortable.</span></div>
+          </div>
+          <div class="monograph-row" role="row">
+            <h3 role="rowheader">A lubricant</h3><span class="strength" role="cell"></span>
+            <div class="role" role="cell"><b>Contact time</b><span>Keeps the drop on the surface of the eye for longer.</span></div>
+          </div>
+        </div>
+      </div>
+      <aside class="dosing" aria-labelledby="dose-title">
+        <h3 id="dose-title">How it is used and what it aims to do</h3>
+        <div class="drops" aria-hidden="true">
+          <div><svg style="color:#7fb4ec"><use href="#drop"/></svg><span>1</span></div>
+          <div><svg style="color:#7fb4ec"><use href="#drop"/></svg><span>2</span></div>
+          <div><svg style="color:#7fb4ec"><use href="#drop"/></svg><span>3</span></div>
+          <div><svg style="color:#7fb4ec"><use href="#drop"/></svg><span>4</span></div>
+        </div>
+        <p class="dose-line">2 drops, 4 times a day, self-administered</p>
+        <ul class="aims">
+          <li>Aims to <strong>slow progression</strong> in early-to-moderate cataract and <strong>delay the need for surgery</strong></li>
+          <li>Whether established opacity can regress is an open question our studies are designed to detect</li>
+        </ul>
+      </aside>
+    </div>
+
+    <h3 class="sub serif" id="science">How it is designed to work</h3>
+    <p>Age-related cataract develops largely through oxidative damage to the lens's long-lived proteins. Some of the lens's antioxidant defenses depend on zinc.</p>
+
+    <figure class="mech" id="mech">
+      <p class="swipe" aria-hidden="true">Swipe to see the full figure</p>
+      <div class="mech-scroll fig-scroll">
+      <svg viewBox="0 0 1000 400" role="img" aria-labelledby="mechTitle">
+        <title id="mechTitle">Working hypothesis in four steps: 1, zinc from the drop reaches the front of the eye; 2, it reaches the cell layer on the front of the lens; 3, there it supports zinc-dependent antioxidant defenses that neutralize oxidants; 4, the lens's long-lived proteins take less oxidative damage, so clouding progresses more slowly.</title>
+        <defs>
+          <clipPath id="mclip"><rect x="0" y="0" width="1000" height="400"/></clipPath>
+          <radialGradient id="cellFill" cx="45%" cy="40%" r="70%"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e3edf8"/></radialGradient>
+          <symbol id="spark" viewBox="-10 -10 20 20"><path d="M0-9 L2 -2 L9 0 L2 2 L0 9 L-2 2 L-9 0 L-2 -2 Z" fill="#c98a2e"/></symbol>
+        </defs>
+        <g clip-path="url(#mclip)">
+          <g fill="none" stroke="#c9d7e6" stroke-width="1.4">
+            <path d="M366 10 A640 640 0 0 0 366 390"/><path d="M418 10 A590 590 0 0 0 418 390"/><path d="M471 10 A540 540 0 0 0 471 390"/>
+            <path d="M524 10 A490 490 0 0 0 524 390"/><path d="M579 10 A440 440 0 0 0 579 390"/><path d="M634 10 A390 390 0 0 0 634 390"/>
+            <path d="M690 10 A340 340 0 0 0 690 390"/><path d="M748 10 A290 290 0 0 0 748 390"/><path d="M808 10 A240 240 0 0 0 808 390"/>
+          </g>
+          <g fill="#9fb6cf">
+            <circle cx="860" cy="120" r="4"/><circle cx="878" cy="120" r="4"/><circle cx="896" cy="120" r="4"/><circle cx="914" cy="120" r="4"/>
+            <circle cx="850" cy="160" r="4"/><circle cx="868" cy="160" r="4"/><circle cx="886" cy="160" r="4"/><circle cx="904" cy="160" r="4"/><circle cx="922" cy="160" r="4"/>
+            <circle cx="846" cy="200" r="4"/><circle cx="864" cy="200" r="4"/><circle cx="882" cy="200" r="4"/><circle cx="900" cy="200" r="4"/><circle cx="918" cy="200" r="4"/>
+            <circle cx="850" cy="240" r="4"/><circle cx="868" cy="240" r="4"/><circle cx="886" cy="240" r="4"/><circle cx="904" cy="240" r="4"/><circle cx="922" cy="240" r="4"/>
+            <circle cx="860" cy="280" r="4"/><circle cx="878" cy="280" r="4"/><circle cx="896" cy="280" r="4"/><circle cx="914" cy="280" r="4"/>
+          </g>
+          <path d="M301 10 A700 700 0 0 0 301 390" fill="none" stroke="#37699b" stroke-width="2"/>
+          <g fill="url(#cellFill)" stroke="#37699b" stroke-width="1.3">
+            <ellipse cx="309" cy="40" rx="8" ry="17"/><ellipse cx="301" cy="80" rx="8" ry="17"/><ellipse cx="296" cy="120" rx="8" ry="17"/>
+            <ellipse cx="293" cy="160" rx="9" ry="18" stroke="#2c5781" stroke-width="2.2"/>
+            <ellipse cx="292" cy="200" rx="8" ry="17"/><ellipse cx="294" cy="240" rx="8" ry="17"/><ellipse cx="298" cy="280" rx="8" ry="17"/><ellipse cx="304" cy="320" rx="8" ry="17"/><ellipse cx="312" cy="358" rx="8" ry="17"/>
+          </g>
+          <path d="M92 0 Q30 200 92 400 L112 400 Q50 200 112 0 Z" fill="#e3edf8" stroke="#37699b" stroke-width="1.4"/>
+          <path d="M44 128c0 0-12 15-12 23a12 12 0 0 0 24 0c0-8-12-23-12-23Z" fill="#7fb4ec"/>
+          <g fill="none" stroke="#7fb4ec" stroke-width="1.5" stroke-dasharray="3 6">
+            <path d="M84 150 C170 130 230 140 284 158"/><path d="M80 200 C170 200 230 200 282 200"/><path d="M84 250 C170 262 230 252 284 240"/>
+          </g>
+          <g fill="#3f86d4">
+            <circle class="zn" cx="279" cy="152" r="5" style="--dx:-190px;--dy:0px"/>
+            <circle class="zn" cx="272" cy="186" r="5" style="--dx:-186px;--dy:6px"/>
+            <circle class="zn" cx="270" cy="212" r="5" style="--dx:-182px;--dy:-4px"/>
+            <circle class="zn" cx="272" cy="238" r="5" style="--dx:-186px;--dy:8px"/>
+            <circle class="zn" cx="280" cy="272" r="5" style="--dx:-190px;--dy:-6px"/>
+          </g>
+          <path d="M302 150 L512 74 M302 170 L512 306" stroke="#37699b" stroke-width="1" stroke-dasharray="2 4" fill="none"/>
+          <circle cx="600" cy="190" r="122" fill="#ffffff" stroke="#37699b" stroke-width="2"/>
+          <ellipse cx="600" cy="190" rx="104" ry="96" fill="url(#cellFill)" stroke="#9fb6cf" stroke-width="1.2"/>
+          <!-- zinc-dependent antioxidant defenses -->
+          <g class="shield">
+            <path d="M600 128 L646 146 V192 C646 222 624 242 600 252 C576 242 554 222 554 192 V146 Z" fill="#ffffff" stroke="#37699b" stroke-width="2.2"/>
+            <g fill="#3f86d4"><circle cx="588" cy="172" r="5"/><circle cx="612" cy="172" r="5"/><circle cx="600" cy="192" r="5"/><circle cx="588" cy="212" r="5"/><circle cx="612" cy="212" r="5"/></g>
+          </g>
+          <g class="ros"><use href="#spark" x="664" y="128" width="22" height="22"/><use href="#spark" x="508" y="150" width="20" height="20"/><use href="#spark" x="664" y="226" width="20" height="20"/><use href="#spark" x="516" y="236" width="18" height="18"/></g>
+          <g fill="none" stroke="#c98a2e" stroke-width="1.2" stroke-dasharray="2 3"><path d="M666 146 L648 156"/><path d="M528 162 L552 168"/><path d="M666 232 L640 220"/><path d="M534 240 L560 226"/></g>
+          <g font-family="-apple-system, Segoe UI, Roboto, Arial, sans-serif" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">
+            <circle cx="70" cy="34" r="14" fill="#37699b"/><text x="70" y="39">1</text>
+            <circle cx="262" cy="34" r="14" fill="#37699b"/><text x="262" y="39">2</text>
+            <circle cx="702" cy="70" r="14" fill="#37699b"/><text x="702" y="75">3</text>
+            <circle cx="884" cy="76" r="14" fill="#37699b"/><text x="884" y="81">4</text>
+          </g>
+          <g font-size="13" fill="#3b495d">
+            <text x="20" y="384">Cornea</text>
+            <text x="150" y="384">Aqueous humor</text>
+            <text x="216" y="110" text-anchor="end">Zinc</text>
+            <text x="320" y="384">Lens epithelium</text>
+            <text x="600" y="280" text-anchor="middle">Antioxidant defenses</text>
+            <text x="690" y="122">Oxidants</text>
+            <text x="884" y="320" text-anchor="middle">Lens proteins:</text>
+            <text x="884" y="336" text-anchor="middle">less oxidative damage</text>
+          </g>
+        </g>
+      </svg>
+      </div>
+      <figcaption>Our working hypothesis, which our planned studies are designed to test.</figcaption>
+    </figure>
+
+    <ol class="steps4">
+      <li><h3>Topical zinc</h3><p>Each drop supplies zinc to the front of the eye.</p></li>
+      <li><h3>Lens epithelium</h3><p>The single cell layer under the lens capsule, where most of the lens's protective machinery sits.</p></li>
+      <li><h3>Antioxidant defenses</h3><p>Zinc-dependent defenses in these cells help neutralize oxidants.</p></li>
+      <li><h3>Intended outcome</h3><p>Less oxidative damage to the lens's long-lived proteins, so clouding progresses more slowly.</p></li>
+    </ol>
+
+    <span class="kicker pull-kicker">What sets it apart</span>
+    <p class="pull">Opcure is designed to support the lens's own defenses with an ingredient already used in the eye, rather than a new molecule or an oral supplement.</p>
+    <p class="pull-src">The scientific rationale, with full references, is available on request.</p>
+  </div>
+</section>
+
+<!-- ========== PATENTS ========== -->
+<section class="section dark patents" id="patents" aria-labelledby="patents-title">
+  <svg class="edge edge-top" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true" style="color: var(--white)"><path d="M0 0 L1440 0 L1440 100 Q720 0 0 100 Z"/></svg>
+  <div class="wrap">
+    <div class="head">
+      <h2 id="patents-title">Granted patents in the US and China</h2>
+      <p class="lead">Our core patents are granted and published. Supported by experienced US patent counsel.</p>
+    </div>
+    <div class="ptl" role="list" aria-label="Patent family timeline">
+      <div class="ptl-bar" aria-hidden="true"><i></i></div>
+      <div class="ptl-item" role="listitem"><span class="ptl-dot" aria-hidden="true"></span><p class="ptl-year">2020</p><p>First filing</p></div>
+      <div class="ptl-item" role="listitem"><span class="ptl-dot" aria-hidden="true"></span><p class="ptl-year">2021</p><p>US and international applications filed</p></div>
+      <div class="ptl-item key" role="listitem"><span class="ptl-dot" aria-hidden="true"></span><p class="ptl-year">2022</p><p>US patent granted</p></div>
+      <div class="ptl-item key" role="listitem"><span class="ptl-dot" aria-hidden="true"></span><p class="ptl-year">2026</p><p>China patent granted</p></div>
+      <div class="ptl-item end" role="listitem"><span class="ptl-dot" aria-hidden="true"></span><p class="ptl-year"><span class="approx">~</span>2041</p><p>Expected expiry, 20 years from the 2021 filing</p></div>
+    </div>
+    <div class="patent-list">
+      <div>
+        <p class="where">United States</p>
+        <p class="num">US 11,433,096 B2</p>
+        <p>Granted September 2022, with 14 method-of-treatment claims.</p>
+      </div>
+      <div>
+        <p class="where">China</p>
+        <p class="num">CN 116096356 B</p>
+        <p>Granted April 2026.</p>
+      </div>
+      <div>
+        <p class="where">Other markets</p>
+        <p class="num">Pending</p>
+        <p>Further applications in the same family are in examination.</p>
+      </div>
+    </div>
+    <p class="ip-inventors">Inventors: Abdelhamid al-Qallawi and Sherif al-Qallawi.</p>
+  </div>
+  <svg class="edge edge-bottom" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true" style="color: var(--paper)"><path d="M0 100 L0 0 Q720 100 1440 0 L1440 100 Z"/></svg>
+</section>
+
+<!-- ========== PATH FORWARD ========== -->
+<section class="section paper" id="path" aria-labelledby="path-title">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="path-title">Generate controlled data, then license globally</h2>
+      <p class="lead">Global licensing is our primary business plan. Detailed plans, timelines and financial materials are shared with investors on request.</p>
+    </div>
+    <div class="flow">
+      <div class="owners owners-3" aria-hidden="true"><span>Opcure</span><span>With a global partner</span></div>
+      <ol class="nodes nodes-3">
+        <li class="node" data-owner="Led by Opcure"><span class="dot" aria-hidden="true">1</span><h3>Ready for the clinic</h3><p>Complete the preclinical and manufacturing work needed to begin studies in patients, guided by regulatory advice.</p></li>
+        <li class="node" data-owner="Led by Opcure"><span class="dot" aria-hidden="true">2</span><h3>First controlled data</h3><p>A randomized, controlled study in patients to test whether the drop slows lens clouding.</p></li>
+        <li class="node" data-owner="With a global partner"><span class="dot" aria-hidden="true">3</span><h3>Global partnership</h3><p>License to a global ophthalmology company to complete development and bring the drop to patients worldwide.</p></li>
+      </ol>
     </div>
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
-<footer>
-  <div class="footer-inner footer-disclaimer">
-    <strong>Forward-looking statements.</strong> Market, sales, royalty, probability-of-success and valuation figures on this site are management projections based on the assumptions stated herein. They are estimates, not guarantees, and actual results may differ materially. This site is provided for information only and is not an offer to sell, or a solicitation of an offer to buy, any security.
-  </div>
-  <div class="footer-inner footer-bottom">
-    <p>&copy; 2026 Opcure. All rights reserved. &nbsp;|&nbsp; Investor Brief, September 2026 (v7.6)</p>
-    <div class="footer-links">
-      <a href="mailto:team@opcure.net">Contact</a>
+<!-- ========== TEAM ========== -->
+<section class="section" id="team" aria-labelledby="team-title">
+  <svg class="edge edge-top edge-sm" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true" style="color: var(--paper)"><path d="M0 0 L1440 0 L1440 100 Q720 0 0 100 Z"/></svg>
+    <div class="wrap">
+    <div class="head">
+      <h2 id="team-title">Inventor-led, with pharmacy and partnering depth</h2>
+      <p class="lead">Pharmacy, clinical research, regulatory, market-access and partnering experience across three continents.</p>
     </div>
+    <div class="people">
+      <article class="person">
+        <svg class="mono" viewBox="0 0 76 76" aria-hidden="true"><circle cx="38" cy="38" r="37" fill="#e3edf8"/><circle cx="38" cy="38" r="28" fill="none" stroke="#8fb3d9" stroke-width="1.2"/><text x="38" y="45" text-anchor="middle" font-family="Opcure Charter, Charter, Georgia, serif" font-weight="700" font-size="22" fill="#2c5781">SQ</text></svg>
+        <h3>Sherif al-Qallawi</h3>
+        <p class="role">Founder and CEO</p>
+        <p>Co-inventor. BSc Pharmaceutical Sciences (Alexandria). PhD Organizational Psychology (Florida Tech). Leads strategy, development and partnering.</p>
+      </article>
+      <article class="person">
+        <svg class="mono" viewBox="0 0 76 76" aria-hidden="true"><circle cx="38" cy="38" r="37" fill="#e3edf8"/><circle cx="38" cy="38" r="28" fill="none" stroke="#8fb3d9" stroke-width="1.2"/><text x="38" y="45" text-anchor="middle" font-family="Opcure Charter, Charter, Georgia, serif" font-weight="700" font-size="22" fill="#2c5781">AQ</text></svg>
+        <h3>Abdelhamid al-Qallawi</h3>
+        <p class="role">Co-inventor and Scientific Advisor</p>
+        <p>Pharmacist, BSc Pharmaceutical Sciences (Alexandria, 1979). More than 40 years in community pharmacy, with deep experience in compounded eye preparations.</p>
+      </article>
+      <article class="person">
+        <svg class="mono" viewBox="0 0 76 76" aria-hidden="true"><circle cx="38" cy="38" r="37" fill="#e3edf8"/><circle cx="38" cy="38" r="28" fill="none" stroke="#8fb3d9" stroke-width="1.2"/><text x="38" y="45" text-anchor="middle" font-family="Opcure Charter, Charter, Georgia, serif" font-weight="700" font-size="22" fill="#2c5781">OA</text></svg>
+        <h3>Omar Abozeid</h3>
+        <p class="role">Head of Strategy and Partnerships</p>
+        <p>Regulatory and scientific diligence, strategic planning and outreach to potential partners.</p>
+      </article>
+      <article class="person">
+        <svg class="mono" viewBox="0 0 76 76" aria-hidden="true"><circle cx="38" cy="38" r="37" fill="#e3edf8"/><circle cx="38" cy="38" r="28" fill="none" stroke="#8fb3d9" stroke-width="1.2"/><text x="38" y="45" text-anchor="middle" font-family="Opcure Charter, Charter, Georgia, serif" font-weight="700" font-size="22" fill="#2c5781">AS</text></svg>
+        <h3>Ahmed Sedik</h3>
+        <p class="role">Head of Business Development</p>
+        <p>Business development and the partner pipeline, based in Riyadh.</p>
+      </article>
+    </div>
+    <div class="team-more">
+      <div><h3>A team of 10 on three continents</h3><p>Pharmaceutical sciences, ophthalmology, clinical research and medical affairs, ophthalmology market access in Saudi Arabia and the GCC, management consulting, business analytics and business development.</p></div>
+      <div><h3>Advisors</h3><p>Supported by experienced US patent counsel and clinical research advisors.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="section dark contact" id="contact" aria-labelledby="contact-title">
+  <svg class="edge edge-top" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true" style="color: var(--white)"><path d="M0 0 L1440 0 L1440 100 Q720 0 0 100 Z"/></svg>
+  <svg class="contact-mark" viewBox="0 0 653 653" aria-hidden="true"><use href="#opcure-mark"/></svg>
+  <div class="wrap">
+    <div class="head">
+      <h2 id="contact-title">Why it matters, and who we would like to hear from</h2>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <h3>Why it matters</h3>
+        <ul>
+          <li>A self-administered drop needs no operating room, surgeon or hospital stay</li>
+          <li>It could reach patients where surgical capacity is scarce, and people who cannot have, or choose not to have, surgery</li>
+          <li>If it slows progression, it could delay surgery and ease waiting lists</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Available on request</h3>
+        <ul>
+          <li>Investor materials</li>
+          <li>The scientific rationale, with full references</li>
+          <li>Our development plan</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cta">
+      <div>
+        <h3>Get in touch</h3>
+        <p>We welcome introductions from investors, clinical and regulatory partners, manufacturers and pharma business development teams.</p>
+      </div>
+      <a class="btn btn-primary btn-mail" href="mailto:team@opcure.net?subject=Opcure%20enquiry">team@opcure.net</a>
+    </div>
+    <p class="patient-note">For patients: our eye drop is an investigational product and is not available for sale. This website does not give medical advice; if you have questions about cataract, please speak with an eye care professional.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <a class="brand" href="#top" aria-label="Opcure, back to top"><svg viewBox="0 0 3359.5 813" aria-hidden="true"><use href="#opcure-logo"/></svg></a>
+      <a href="mailto:team@opcure.net">team@opcure.net</a>
+    </div>
+    <p class="legal"><strong>Investigational product, not approved by any regulatory authority.</strong> This website is provided for information only and is not an offer to sell, or a solicitation of an offer to buy, any security. Statements about future studies, markets or value are management estimates, not guarantees, and actual results may differ materially. Patent coverage and expiry are summaries; the published patent documents govern.</p>
+    <p class="copyright">&copy; 2026 Opcure. All rights reserved. Last updated November 2026.</p>
   </div>
 </footer>
 
 <script>
-// Scroll-reveal animations
-const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -60px 0px' };
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
+(function () {
+  var nav = document.getElementById('siteNav');
+  var toggle = document.getElementById('menuToggle');
+  var links = document.getElementById('navLinks');
+  var bar = document.getElementById('progress');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  function setMenu(open) {
+    links.classList.toggle('open', open);
+    nav.classList.toggle('menu-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  toggle.addEventListener('click', function () { setMenu(!links.classList.contains('open')); });
+  links.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
 
-// Navbar scroll effect
-window.addEventListener('scroll', () => {
-  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
-});
+  /* Nav background and reading progress */
+  var ticking = false;
+  function onScroll() {
+    var y = window.scrollY, h = document.documentElement.scrollHeight - window.innerHeight;
+    nav.classList.toggle('solid', y > 40);
+    bar.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, y / h) : 0) + ')';
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
 
-// Animated counters
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const el = entry.target;
-      const target = parseFloat(el.dataset.target);
-      const suffix = el.dataset.suffix || '';
-      const duration = 2000;
-      const start = performance.now();
+  if (!('IntersectionObserver' in window)) { var m0 = document.getElementById('mech'); if (m0) m0.classList.add('play'); return; }
 
-      function update(now) {
-        const progress = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        const current = target * eased;
-        el.textContent = (target < 10 ? current.toFixed(target % 1 === 0 ? 0 : 1) : Math.floor(current)) + suffix;
-        if (progress < 1) requestAnimationFrame(update);
-      }
-      requestAnimationFrame(update);
-      counterObserver.unobserve(el);
-    }
-  });
-}, { threshold: 0.5 });
+  /* Active section in the navigation */
+  var map = {};
+  links.querySelectorAll('a[href^="#"]').forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var spy = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      var a = map[e.target.id];
+      if (!a || a.classList.contains('nav-cta')) return;
+      if (e.isIntersecting) { Object.keys(map).forEach(function (k) { map[k].classList.remove('active'); }); a.classList.add('active'); }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  ['problem', 'approach', 'patents', 'path', 'team'].forEach(function (id) { var el = document.getElementById(id); if (el) spy.observe(el); });
 
-document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      document.getElementById('navLinks').classList.remove('open');
-    }
-  });
-});
+  /* Mechanism figure plays once when it comes into view */
+  var mech = document.getElementById('mech');
+  if (mech) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { mech.classList.add('play'); io.disconnect(); } });
+    }, { threshold: 0.45 });
+    io.observe(mech);
+  }
+})();
 </script>
 </body>
 </html>
